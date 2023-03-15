@@ -1,12 +1,11 @@
-import './App.css'
 import RouterProvider from './router/RouterProvider'
-
+import {Container} from "./components/styled/Container.styled"
 function App() {
 
   return (
-    <div className="App">
-   <RouterProvider />
-    </div>
+    <Container>
+      <RouterProvider />
+    </Container>
   )
 }
 
