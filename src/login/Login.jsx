@@ -1,6 +1,9 @@
+import StudentLogin from "./studentLogin/StudentLogin"
 const Login = () =>  {
   return (
-    <div>Welcome to the login page</div>
+    <>
+  <StudentLogin />
+    </>
   )
 }
 

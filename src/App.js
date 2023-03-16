@@ -1,11 +1,14 @@
 import RouterProvider from './router/RouterProvider'
-import {Container} from "./components/styled/Container.styled"
+import { GlobalStyles } from './components/styled/GlobalStyles'
 function App() {
 
   return (
-    <Container>
-      <RouterProvider />
-    </Container>
+    <>
+     <GlobalStyles />
+     <RouterProvider />
+    </>  
+   
+   
   )
 }
 
