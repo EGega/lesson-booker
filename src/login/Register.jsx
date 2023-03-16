@@ -1,7 +1,6 @@
-import StudentLogin from "./studentLogin/StudentLogin"
-import TeacherLogin from "./teacherLogin/TeacherLogin"
+
 import { useState } from "react"
-const Login = () =>  {
+const Register = () =>  {
 const [login, setLogin] = useState("student")
 // I am implementing a simple logic to display the teacher of student according to the clicked button and will change the state accordingly
   return (
@@ -11,4 +10,4 @@ const [login, setLogin] = useState("student")
   )
 }
 
-export default Login
+export default Register

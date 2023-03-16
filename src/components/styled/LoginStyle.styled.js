@@ -12,8 +12,9 @@ background-repeat: no-repeat;
 height: 100vh;
 font-size: 30px;
 display: flex;
-justify-content: right;
+justify-content: flex-end;
 align-items: center;
+padding-right: 5%;
 `
 
 export const LoginInnerContainer = styled.div `

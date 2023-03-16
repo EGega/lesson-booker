@@ -13,7 +13,9 @@ const RouterProvider = () => {
       <Route element={<PrivateRouter auth={auth}/>}>
         <Route path='/' element={<Home/>}/>
       </Route>
-      <Route path='/login' element={<Login auth={auth} />}/>
+      <Route path='/login' element={<Login auth={auth} />}>
+      
+      </Route>
     </Routes>
  </BrowserRouter>
     </>

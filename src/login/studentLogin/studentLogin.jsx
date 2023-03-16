@@ -3,12 +3,14 @@ import { FormStyle, LoginContainer, InputStyle, LoginInnerContainer, LoginBtn, N
 import {TbUserCircle} from "react-icons/tb"
 import {RiLockPasswordFill} from "react-icons/ri"
 import { loginIcons } from '../../components/styled/iconStylers'
-const StudentLogin = () => {
+import { useNavigate } from 'react-router-dom'
+const StudentLogin = ({setLogin}) => {
+  const navigate = useNavigate()
   return (
     <LoginContainer >
       <LoginInnerContainer>
         <FormStyle action='submit'>
-        <h3>Log In</h3>
+        <h3> Student Login</h3>
           <InputStyle>
           <TbUserCircle style={loginIcons} />
           <input type="text" id='email' placeholder='Type your email'/>
@@ -27,7 +29,9 @@ const StudentLogin = () => {
          </div>
          <div>
           <p>Are You a Teacher?</p>
-          <LoginBtn> Login Here </LoginBtn>
+          <LoginBtn onClick={() => {
+            setLogin("teacher")
+          }}> Login Here </LoginBtn>
          </div>
         </NotAnUser>
       </LoginInnerContainer> 
