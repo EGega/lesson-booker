@@ -1,23 +1,36 @@
 import React from 'react'
-import { FormStyle, LoginContainer, InputStyle } from '../../components/styled/LoginStyle.styled'
+import { FormStyle, LoginContainer, InputStyle, LoginInnerContainer, LoginBtn, NotAnUser } from '../../components/styled/LoginStyle.styled'
 import {TbUserCircle} from "react-icons/tb"
 import {RiLockPasswordFill} from "react-icons/ri"
 import { loginIcons } from '../../components/styled/iconStylers'
 const StudentLogin = () => {
   return (
-    <LoginContainer > 
-      <FormStyle action='submit'>
-         <h3>Log in</h3>
-        <InputStyle>
-        <TbUserCircle style={loginIcons} />
-        <input type="text" id='email' placeholder='Type your email'/>
-        </InputStyle>
-
-        <InputStyle>
-        <RiLockPasswordFill style={loginIcons}/>
-        <input type="password" id='password'  placeholder='Type your password' />
-        </InputStyle>
-      </FormStyle>
+    <LoginContainer >
+      <LoginInnerContainer>
+        <FormStyle action='submit'>
+        <h3>Log In</h3>
+          <InputStyle>
+          <TbUserCircle style={loginIcons} />
+          <input type="text" id='email' placeholder='Type your email'/>
+          </InputStyle>
+          <InputStyle>
+          <RiLockPasswordFill style={loginIcons}/>
+          <input type="password" id='password'  placeholder='Type your password' />
+          </InputStyle>
+          <LoginBtn> Login </LoginBtn>
+        </FormStyle>
+        {/* Not a user */}
+        <NotAnUser >
+         <div>
+          <p>Not a user?</p>
+          <LoginBtn> Register Here </LoginBtn>
+         </div>
+         <div>
+          <p>Are You a Teacher?</p>
+          <LoginBtn> Login Here </LoginBtn>
+         </div>
+        </NotAnUser>
+      </LoginInnerContainer> 
     </LoginContainer >
     
   )

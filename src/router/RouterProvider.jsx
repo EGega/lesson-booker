@@ -6,7 +6,6 @@ import PrivateRouter from './PrivateRouter';
 
 const RouterProvider = () => {
   const [auth, setAuth] = useState(false)
-  console.log(PrivateRouter);
   return (
     <>
  <BrowserRouter >
