@@ -1,10 +1,11 @@
-import React from 'react'
+import {React, useState} from 'react'
 import { FormStyle, LoginContainer, InputStyle, LoginInnerContainer, LoginBtn, NotAnUser } from '../../components/styled/LoginStyle.styled'
 import {TbUserCircle} from "react-icons/tb"
 import {RiLockPasswordFill} from "react-icons/ri"
 import { loginIcons } from '../../components/styled/iconStylers'
 import { useNavigate } from 'react-router-dom'
 const StudentLogin = ({setLogin}) => {
+  const [logged, setLogged ] = useState(false)
   const navigate = useNavigate()
   return (
     <LoginContainer >
