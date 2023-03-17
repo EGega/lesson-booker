@@ -9,7 +9,7 @@ const StudentLogin = ({setLogin}) => {
   return (
     <LoginContainer >
       <LoginInnerContainer>
-        <FormStyle action='submit'>
+        <FormStyle>
         <h3> Student Login</h3>
           <InputStyle>
           <TbUserCircle style={loginIcons} />
@@ -24,8 +24,11 @@ const StudentLogin = ({setLogin}) => {
         {/* Not a user */}
         <NotAnUser >
          <div>
-          <p>Not a user?</p>
-          <LoginBtn> Register Here </LoginBtn>
+          <p>Not a User?</p>
+          <LoginBtn onClick={(e) => {
+            e.preventDefault()
+            navigate('/register')
+          }}> Register Here </LoginBtn>
          </div>
          <div>
           <p>Are You a Teacher?</p>

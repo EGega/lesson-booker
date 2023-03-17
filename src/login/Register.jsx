@@ -1,11 +1,11 @@
-
+import TeacherRegister from "./teacherLogin/TeacherRegister"
+import StudentRegister from "./studentLogin/StudentRegister"
 import { useState } from "react"
 const Register = () =>  {
-const [login, setLogin] = useState("student")
-// I am implementing a simple logic to display the teacher of student according to the clicked button and will change the state accordingly
+const [register, setRegister] = useState("student")
   return (
     <>
-     { login === "student" ? <StudentLogin setLogin={setLogin}/> : <TeacherLogin setLogin={setLogin}/> } 
+     { register === "student" ? <StudentRegister setRegister={setRegister}/> : <TeacherRegister setRegister={setRegister}/> } 
     </>
   )
 }
