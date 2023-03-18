@@ -1,10 +1,11 @@
 import { Outlet, Navigate } from 'react-router-dom';
 import React from 'react'
-
-const PrivateRouter = ({auth}) => {
-
+import { useSelector } from 'react-redux';
+const PrivateRouter = () => {
+const isLogged = useSelector(state => state.logged )
+console.log(isLogged)
   return (
-    auth ? <Outlet/> : <Navigate to='/login'/> 
+    isLogged ? <Outlet/> : <Navigate to='/login'/> 
   )
 }
 

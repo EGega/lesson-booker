@@ -1,11 +1,15 @@
 import RouterProvider from './router/RouterProvider'
 import { GlobalStyles } from './components/styled/GlobalStyles'
+import { Provider } from 'react-redux'
+import store from './store'
 function App() {
 
   return (
     <>
-     <GlobalStyles />
-     <RouterProvider />
+     <Provider store={store}>
+       <GlobalStyles />
+       <RouterProvider />
+     </Provider>
     </>  
    
    

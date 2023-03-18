@@ -1,12 +1,19 @@
-import {React, useState} from 'react'
+
 import { FormStyle, LoginContainer, InputStyle, LoginInnerContainer, LoginBtn, NotAnUser } from '../../components/styled/LoginStyle.styled'
 import {TbUserCircle} from "react-icons/tb"
 import {RiLockPasswordFill} from "react-icons/ri"
 import { loginIcons } from '../../components/styled/iconStylers'
 import { useNavigate } from 'react-router-dom'
+import { loginActions } from '../../store'
+import { useDispatch } from 'react-redux'
 const StudentLogin = ({setLogin}) => {
-  const [logged, setLogged ] = useState(false)
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  // loginhandler
+  const loginHandler = () => {
+    dispatch(loginActions.loginToggler())
+    navigate('/')
+  }
   return (
     <LoginContainer >
       <LoginInnerContainer>
@@ -20,7 +27,7 @@ const StudentLogin = ({setLogin}) => {
           <RiLockPasswordFill style={loginIcons}/>
           <input type="password" id='password'  placeholder='Type your password' />
           </InputStyle>
-          <LoginBtn> Login </LoginBtn>
+          <LoginBtn onClick={loginHandler}> Login </LoginBtn>
         </FormStyle>
         {/* Not a user */}
         <NotAnUser >
