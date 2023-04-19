@@ -3,11 +3,20 @@ import { FormStyle, LoginContainer, InputStyle, LoginInnerContainer, LoginBtn, N
 import {TbUserCircle} from "react-icons/tb"
 import {RiLockPasswordFill} from "react-icons/ri"
 import { loginIcons } from '../../components/styled/iconStylers'
-const teacherLogin = ({setLogin}) => {
+import { useNavigate } from 'react-router-dom'
+import { loginActions } from '../../store'
+import { useDispatch } from 'react-redux'
+const TeacherLogin = ({setLogin}) => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const loginHandler = () => {
+    dispatch(loginActions.loginToggler())
+    navigate('/')
+  }
   return (
     <LoginContainer >
       <LoginInnerContainer>
-        <FormStyle action='submit'>
+        <FormStyle action='submit'> 
         <h3>Teacher Login</h3>
           <InputStyle>
           <TbUserCircle style={loginIcons} />
@@ -17,7 +26,7 @@ const teacherLogin = ({setLogin}) => {
           <RiLockPasswordFill style={loginIcons}/>
           <input type="password" id='password'  placeholder='Type your password' />
           </InputStyle>
-          <LoginBtn> Login </LoginBtn>
+          <LoginBtn onClick={loginHandler}> Login </LoginBtn>
         </FormStyle>
         {/* Not a user */}
         <NotAnUser >
@@ -37,4 +46,4 @@ const teacherLogin = ({setLogin}) => {
   )
 }
 
-export default teacherLogin
+export default TeacherLogin
