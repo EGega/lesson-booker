@@ -1,0 +1,26 @@
+.avatarImage {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.linkDiv, .imgDiv {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+}
+.imgDiv {
+  padding-right: 20px;
+}
+.linkDiv {
+  padding-left: 20px;
+}
+.linkDiv a, .imgDiv a {
+  color: #000;
+  text-decoration: none;
+}
+.linkDiv a:hover {
+  color: #000000c5;
+
+}
