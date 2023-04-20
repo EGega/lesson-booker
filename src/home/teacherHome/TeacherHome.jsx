@@ -3,10 +3,14 @@ import Navbar from '../../components/navbar/Navbar'
 import { TeacherMainContainer } from '../../components/styled/teacherStyle/teacherHome'
 const Teacherhome = () => {
   return (
+    <>
+     <Navbar />
     <TeacherMainContainer>
-      <Navbar />
-  <div>Welcome Home</div>
+      <div>
+        
+      </div>
     </TeacherMainContainer>
+    </>
   )
 }
 
