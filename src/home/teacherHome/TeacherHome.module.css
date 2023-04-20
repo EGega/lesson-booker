@@ -1,0 +1,11 @@
+.container{
+height: calc(100vh - 75px);
+margin-top: 75px;
+width: 100%;  
+background-image: url("../../assets/teacherbg.jpg");
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+}

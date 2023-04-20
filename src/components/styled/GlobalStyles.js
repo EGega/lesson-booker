@@ -1,6 +1,5 @@
-import { createGlobalStyle } from "styled-components"
-
-
+import { createGlobalStyle} from "styled-components"
+import styled from "styled-components"
 // This will be used for the global styles in App.js
 
 export const GlobalStyles = createGlobalStyle `
@@ -18,3 +17,4 @@ p {
   opacity: 0.8;
 }
 `
+
