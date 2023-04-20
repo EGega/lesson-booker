@@ -30,7 +30,7 @@ const Teacherhome = () => {
         </div>
         <div>
         <img src={administration} alt="administration" />
-        <button>Admins</button>
+        <button>Administration</button>
         </div>
         <div>
         <img src={review} alt="review" />

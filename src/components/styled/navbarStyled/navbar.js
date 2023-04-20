@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const NavbarStyle = styled.nav `
-margin-top: 10px;
+padding: 8px 0;
 position: fixed;
 width: 100%;
 top: 0;
@@ -10,4 +10,5 @@ display:flex;
 font-size: 20px;
 align-items: center;
 justify-content: space-between;
+background-color: #3d322bed;
 `

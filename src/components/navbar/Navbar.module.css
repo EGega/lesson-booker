@@ -17,10 +17,10 @@
   padding-left: 20px;
 }
 .linkDiv a, .imgDiv a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 .linkDiv a:hover {
-  color: #000000c5;
+  color: #fff;
 
 }
