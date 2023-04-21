@@ -36,6 +36,9 @@
   .btn {
     background-color:  #4a3d2a;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 70%;
     font-size: 18px;
     letter-spacing: 0.7px;
@@ -45,6 +48,8 @@
     outline: none;
     margin-bottom: 10px;
     cursor: pointer;
+    text-decoration: none;
+
   }
   .btn:hover {
     background-color: #4a3d2ad0;

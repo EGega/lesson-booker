@@ -42,7 +42,7 @@ export const students = [
   age: 17,
   },
   {
-  id: 1,
+  id: 6,
   firstName: "Jimmy",
   lastName: "Neutron",
   gender: "Male",
@@ -50,7 +50,7 @@ export const students = [
   age: 28,
   },
   {
-  id: 2,
+  id: 7,
   firstName: "Jenny",
   lastName: "Mola",
   gender: "Female",
@@ -58,7 +58,7 @@ export const students = [
   age: 34,
   },
   {
-  id: 3,
+  id: 8,
   firstName: "Endri",
   lastName: "Gorica",
   gender: "Male",
@@ -66,7 +66,7 @@ export const students = [
   age: 45,
   },
   {
-  id: 4,
+  id: 9,
   firstName: "Anxhela",
   lastName: "Olldashi",
   gender: "Female",
@@ -74,7 +74,7 @@ export const students = [
   age: 28,
   },
   {
-  id: 5,
+  id: 10,
   firstName: "Wang",
   lastName: "Fujing",
   gender: "Male",

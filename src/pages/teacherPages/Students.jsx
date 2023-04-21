@@ -2,9 +2,9 @@ import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import { students } from '../../data/data'
 import styled from './Students.module.css'
+import { Link } from 'react-router-dom';
 // for the moment I am creating a fake students website and will put user generated students for backend
 const Students = () => {
-  console.log(students);
   return (
     <>
    <Navbar/>
@@ -22,7 +22,11 @@ const Students = () => {
         <h3>{gender}</h3>
         <h3>{age}</h3>
       </div>
-      <button className={styled.btn}>Details</button>
+     
+       <Link to={`/students/${student.id}`} className={styled.btn}>
+              Details
+      </Link>
+     
     </div>
     )
    })
