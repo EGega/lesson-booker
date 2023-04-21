@@ -6,34 +6,79 @@ export const students = [
   firstName: "Jimmy",
   lastName: "Neutron",
   gender: "Male",
-  img: maleAvatar
+  img: maleAvatar,
+  age: 28,
   },
   {
   id: 2,
   firstName: "Jenny",
   lastName: "Mola",
   gender: "Female",
-  img: femaleAvatar
+  img: femaleAvatar,
+  age: 34,
   },
   {
   id: 3,
   firstName: "Endri",
   lastName: "Gorica",
   gender: "Male",
-  img: maleAvatar
+  img: maleAvatar,
+  age: 45,
   },
   {
   id: 4,
   firstName: "Anxhela",
   lastName: "Olldashi",
   gender: "Female",
-  img: femaleAvatar
+  img: femaleAvatar,
+  age: 28,
   },
   {
   id: 5,
   firstName: "Wang",
   lastName: "Fujing",
   gender: "Male",
-  img: femaleAvatar
+  img: femaleAvatar,
+  age: 17,
+  },
+  {
+  id: 1,
+  firstName: "Jimmy",
+  lastName: "Neutron",
+  gender: "Male",
+  img: maleAvatar,
+  age: 28,
+  },
+  {
+  id: 2,
+  firstName: "Jenny",
+  lastName: "Mola",
+  gender: "Female",
+  img: femaleAvatar,
+  age: 34,
+  },
+  {
+  id: 3,
+  firstName: "Endri",
+  lastName: "Gorica",
+  gender: "Male",
+  img: maleAvatar,
+  age: 45,
+  },
+  {
+  id: 4,
+  firstName: "Anxhela",
+  lastName: "Olldashi",
+  gender: "Female",
+  img: femaleAvatar,
+  age: 28,
+  },
+  {
+  id: 5,
+  firstName: "Wang",
+  lastName: "Fujing",
+  gender: "Male",
+  img: femaleAvatar,
+  age: 17,
   }
 ]

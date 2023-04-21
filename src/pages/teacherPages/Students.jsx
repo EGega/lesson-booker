@@ -10,13 +10,19 @@ const Students = () => {
    <Navbar/>
    <div className={styled.container}>
    {students.map((student) => {
-    const {id, firstName, lastName, gender, img} = student
+    const {id, firstName, lastName, gender, img, age} = student
     return(
-   <div key={id}>
-      <h2>{firstName}</h2>
-      <h2>{lastName}</h2>
-      <img height="200px" width="200px" src={img} alt="" />
-      <h3>{gender}</h3>
+   <div className={styled.card} key={id}>
+      <img className={styled.img} src={img} alt="" />
+      <div className={styled.name}>
+        <h2>{firstName}</h2>
+        <h2>{lastName}</h2>
+      </div>
+      <div className={styled.genAge}>
+        <h3>{gender}</h3>
+        <h3>{age}</h3>
+      </div>
+      <button className={styled.btn}>Details</button>
     </div>
     )
    })
