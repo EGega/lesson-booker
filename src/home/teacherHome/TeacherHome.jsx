@@ -7,14 +7,16 @@ import books from '../../assets/books.jpg'
 import videos from '../../assets/videos.jpg'
 import administration from '../../assets/administration.jpg'
 import review from '../../assets/review.jpg'
+import { useNavigate } from 'react-router-dom'
 const Teacherhome = () => {
+  const navigate = useNavigate()
   return (
     <>
      <Navbar />
      <div className={style.container}>
         <div>
         <img src={students} alt="students" />
-        <button>Students</button>
+        <button onClick={() => navigate('/students') }>Students</button>
         </div>
         <div>
         <img src={classes} alt="classes" />

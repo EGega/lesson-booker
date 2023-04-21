@@ -1,0 +1,10 @@
+.container{
+  height: calc(100vh);
+  margin-top: 75px;
+  width: 100%;  
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 50px;
+  row-gap: 50px;
+  padding: 20px;
+  }
