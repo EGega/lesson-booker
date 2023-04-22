@@ -19,12 +19,18 @@ ___
 ___
 
 **Currently this app is under the construction**
+
 **For the moment a fake log in log out featuure has been added by using Private Routing and Redux Toolkit to store the global log in values**
+
 *Real Authentication is coming with Django*
+
 **When login teachers see a homepage with some features like books, students, teaching videos, booked classes, admin page and feedback.**
+
 *Currently some dummy data comes when we fetch students but this will change with the implementation of Django*
+
 ** A unique page is created for each student when we click on each of the student cards / UseParam and ReactRoute has been used
-*Routere*
+
+*Router*
 ```
 <Route path='/students/:id' element={<StudentDetails />} />
 ```
