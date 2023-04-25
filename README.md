@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Fullstack lesson booker App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### This is a fullstack app that can be used by Teachers and Students to book and create lessons
+___
+## Used Technologies
+___
+### Front End
+1. Javascript
+2. React
+3. Redux Toolkit
+4. Styled Components
+5. React Router
+___
+### Backend
+6. Python
+7. Django
+8. Postgres Sql
+9. Rest Framework
 
-## Available Scripts
+___
 
-In the project directory, you can run:
+**Currently this app is under the construction**
 
-### `yarn start`
+**For the moment a fake log in log out featuure has been added by using Private Routing and Redux Toolkit to store the global log in values**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+*Real Authentication is coming with Django*
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**When login teachers see a homepage with some features like books, students, teaching videos, booked classes, admin page and feedback.**
 
-### `yarn test`
+*Currently some dummy data comes when we fetch students but this will change with the implementation of Django*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+** A unique page is created for each student when we click on each of the student cards / UseParam and ReactRoute has been used
 
-### `yarn build`
+*Router*
+```
+<Route path='/students/:id' element={<StudentDetails />} />
+```
+*StudentDetailPage*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+import { useParams } from 'react-router-dom'
+import {students} from '../../data/data.js'
+const StudentDetails = () => {
+  const { id } = useParams();
+  const student = students.find((s) => s.id === parseInt(id));
+  console.log(student);
+  return (
+    <div>{student.firstName}</div>
+  )
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+export default StudentDetails
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+//More detailes are being added of course
+```
+### This readme file will be constantly updated
