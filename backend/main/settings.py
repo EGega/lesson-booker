@@ -39,6 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Own Apps
     'lessons',
+
+    # Third Party
+    'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+
     
 ]
 
