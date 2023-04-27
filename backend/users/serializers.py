@@ -32,3 +32,20 @@ class RegisterSerializer(serializers.ModelSerializer):
             "password",
             "password2",
               ]
+    
+    def validate(self, data):
+        if data["password"] != data["password2"]: # we are validating if the passwords are the same 
+            raise serializers.ValidationError(
+                {"message": "Password fields didn't match!"}
+            )
+            
+        return data
+    
+    # we need to get the password 2 out of the list since it will not be registered in the database and also save the password in a hashed way
+    def create(self, validated_data):
+        password = validated_data.get("password")
+        validated_data.pop("password2")
+        user = User.objects.create(**validated_data) # we are mapping the data here
+        user.set_password(password)
+        user.save()
+        return user
