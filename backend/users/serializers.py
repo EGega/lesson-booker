@@ -16,7 +16,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         validators = [validate_password], #Django's default password validator (can be found on main settings)
         style = {"input_type" : "password"}
     )
-    password = serializers.CharField(
+    password2 = serializers.CharField(
         write_only = True,
         required = True,
         style = {"input_type" : "password"}
@@ -41,7 +41,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             
         return data
     
-    # we need to get the password 2 out of the list since it will not be registered in the database and also save the password in a hashed way
+    # we need to get the password 2 out of the dictionary since it will not be registered in the database and also save the password in a hashed way
     def create(self, validated_data):
         password = validated_data.get("password")
         validated_data.pop("password2")
@@ -49,3 +49,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.set_password(password)
         user.save()
         return user
+    
+
+#generate token with signals
+#return user data after login
