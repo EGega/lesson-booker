@@ -1,19 +1,21 @@
 from rest_framework import serializers
-from django.contrib.auth.models import User # we will use it for registration purposes
+from django.contrib.auth.models import User
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth.password_validation import validate_password
+
+from dj_rest_auth.serializers import TokenSerializer
+
 class RegisterSerializer(serializers.ModelSerializer):
-    
+
     email = serializers.EmailField(
-    required=True,
-    validators = [UniqueValidator(queryset=User.objects.all())] 
-     )
+        required=True,
+        validators = [UniqueValidator(queryset=User.objects.all())]
+        )
     
-    #passwordtwo is not part of the User model , we need it just for the purpose of confirmation, I won't save it on the server though
     password = serializers.CharField(
         write_only = True,
         required = True,
-        validators = [validate_password], #Django's default password validator (can be found on main settings)
+        validators = [validate_password],
         style = {"input_type" : "password"}
     )
     password2 = serializers.CharField(
@@ -25,32 +27,39 @@ class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = [
-            "username",
-            "first_name",
-            "last_name",
-            "email",
-            "password",
-            "password2",
-              ]
-    
+        'username',
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'password2']
+        
     def validate(self, data):
-        if data["password"] != data["password2"]: # we are validating if the passwords are the same 
+        if data["password"] != data["password2"]:
             raise serializers.ValidationError(
-                {"message": "Password fields didn't match!"}
+                {"message" : "Password fields didnt match!"}
             )
-            
         return data
     
-    # we need to get the password 2 out of the dictionary since it will not be registered in the database and also save the password in a hashed way
+    
     def create(self, validated_data):
         password = validated_data.get("password")
         validated_data.pop("password2")
-        user = User.objects.create(**validated_data) # we are mapping the data here
+        user = User.objects.create(**validated_data)
         user.set_password(password)
         user.save()
         return user
-
     
-
-#generate token with signals
-#return user data after login
+    
+class UserTokenSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("id", "first_name", "last_name", "email")
+    
+    
+class CustomTokenSerializer(TokenSerializer):
+    user = UserTokenSerializer(read_only = True)
+    
+    class Meta(TokenSerializer.Meta):
+        fields = ("key", "user")
+        
