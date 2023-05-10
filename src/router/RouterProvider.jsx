@@ -5,6 +5,7 @@ import Register from '../login/Register';
 import PrivateRouter from './PrivateRouter';
 import Students from "../pages/teacherPages/Students";
 import StudentDetails from "../pages/teacherPages/StudentDetails";
+import Classes from "../pages/teacherPages/classes/Classes";
 
 const RouterProvider = () => {
   
@@ -17,6 +18,8 @@ const RouterProvider = () => {
         {/* The route should change since that is tonbly the teacher homepage not the home page */}
         <Route path='/students' element={<Students/>}/>
         <Route path='/students/:id' element={<StudentDetails />} />
+        <Route path='/classes' element={<Classes/>}/>
+        
       </Route>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register />}>
