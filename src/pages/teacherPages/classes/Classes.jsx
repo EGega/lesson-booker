@@ -13,7 +13,18 @@ const Classes = () => {
   }, []);
   console.log(classes);
   return (
-    <></>
+    <>  
+    {classes?.map((item) => {
+      return (
+        <div>
+         <h2>{item.title}</h2>
+         <h2>{item.description}</h2>
+         <h2>{item.date}</h2>
+         <h2>{item.time}</h2>
+        </div>
+      )
+    })}
+    </>
   )
 }
 
