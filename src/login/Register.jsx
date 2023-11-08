@@ -1,5 +1,5 @@
-import TeacherRegister from "./teacherLogin/TeacherRegister"
-import StudentRegister from "./studentLogin/StudentRegister"
+import TeacherRegister from "./teacherLogin/teacherRegister"
+import StudentRegister from "./studentLogin/studentRegister"
 import { useState } from "react"
 const Register = () =>  {
 const [register, setRegister] = useState("student")

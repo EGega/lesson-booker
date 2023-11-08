@@ -1,5 +1,6 @@
-import StudentLogin from "./studentLogin/StudentLogin"
-import TeacherLogin from "./teacherLogin/TeacherLogin"
+import StudentLogin from "./studentLogin/studentLogin"
+
+import TeacherLogin from "./teacherLogin/teacherLogin"
 import { useState } from "react"
 const Login = () =>  {
 const [login, setLogin] = useState("student")
