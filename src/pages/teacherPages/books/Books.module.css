@@ -1,0 +1,12 @@
+body {
+    overflow: hidden ;
+}
+.container {
+ width: 100vw;
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+}
+
+img {
+    width: calc(100vw / 4);
+}
