@@ -6,6 +6,7 @@ import PrivateRouter from './PrivateRouter';
 import Students from "../pages/teacherPages/Students";
 import StudentDetails from "../pages/teacherPages/StudentDetails";
 import Classes from "../pages/teacherPages/classes/Classes";
+import Books from "../pages/teacherPages/books/Books";
 
 const RouterProvider = () => {
   
@@ -19,12 +20,13 @@ const RouterProvider = () => {
         <Route path='/students' element={<Students/>}/>
         <Route path='/students/:id' element={<StudentDetails />} />
         <Route path='/classes' element={<Classes/>}/>
-        
+        <Route path='/books' element={<Books/>}/>
       </Route>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register />}>
       </Route>
     </Routes>
+
  </BrowserRouter>
     </>
   )
