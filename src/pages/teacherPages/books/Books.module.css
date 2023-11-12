@@ -1,5 +1,6 @@
 
 .container {
+ margin-top: 75px;
  width: 100%;
  display: grid;
  text-align: center;
@@ -21,4 +22,23 @@ img {
     cursor: pointer;
     margin-left: calc(100% - 100px);
     width: 200px;
+}
+.innerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.specBtn {
+    background-color: rgb(62, 62, 168);
+    padding: 10px;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 30px;
+    width: 200px;
+    text-decoration: none;
 }

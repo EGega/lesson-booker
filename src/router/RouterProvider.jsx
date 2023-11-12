@@ -7,6 +7,7 @@ import Students from "../pages/teacherPages/Students";
 import StudentDetails from "../pages/teacherPages/StudentDetails";
 import Classes from "../pages/teacherPages/classes/Classes";
 import Books from "../pages/teacherPages/books/Books";
+import BookDetails from "../pages/teacherPages/books/BookDetails";
 
 const RouterProvider = () => {
   
@@ -21,6 +22,7 @@ const RouterProvider = () => {
         <Route path='/students/:id' element={<StudentDetails />} />
         <Route path='/classes' element={<Classes/>}/>
         <Route path='/books' element={<Books/>}/>
+        <Route path='/books/:id' element={<BookDetails/>}/>
       </Route>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register />}>
