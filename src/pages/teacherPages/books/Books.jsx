@@ -6,6 +6,7 @@ const Books = () => {
   const [count, setCount] = useState(4);
 
   return (
+    <>
     <div className={styled.container}>
       {books.slice(0, count).map((book) => {
         const { id, author, title, image, freeTrial, pbhouse } = book;
@@ -32,7 +33,9 @@ const Books = () => {
         Load More
       </button>
     </div>
+    </>
   );
+
 };
 
 export default Books;
