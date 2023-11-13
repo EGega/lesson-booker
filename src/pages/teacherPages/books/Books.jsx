@@ -25,8 +25,10 @@ const Books = () => {
         );
       })}
       <button
-        onClick={() => setCount(count + 4)}
-        className={styled.btn}>
+        onClick={() => {
+          setCount(count + 4)
+        } }
+        className={count + 4 <= books.length ? styled.btn : styled.disabled }>
         Load More
       </button>
     </div>

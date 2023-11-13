@@ -16,7 +16,7 @@ img {
     width: calc(100vw / 3);
 }
 
-.btn {
+.btn, .disabled {
     background-color: green;
     padding: 10px;
     font-size: 1.2rem;
@@ -33,7 +33,7 @@ img {
     align-items: center;
     justify-content: center;
 }
-.specBtn {
+.specBtn  {
     background-color: rgb(62, 62, 168);
     padding: 10px;
     font-size: 1.3rem;
@@ -46,4 +46,8 @@ img {
     width: 200px;
     text-decoration: none;
     margin-bottom: 30px;
+}
+
+.disabled {
+    cursor: not-allowed;
 }
