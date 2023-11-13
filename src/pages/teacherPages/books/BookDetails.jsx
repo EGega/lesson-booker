@@ -11,7 +11,8 @@ const BookDetails = () => {
         <Navbar />
             <div className={styled.container}>
              <div className={styled.imgDiv}>
-             <img src={image} alt="" />
+             <img src={image} className={styled.image} alt="" />
+             <button className={styled.btn}>Use This Book</button>
             </div>
             <div className={styled.infoDiv}>
             <h3>{title}</h3>
