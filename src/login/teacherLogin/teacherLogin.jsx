@@ -14,7 +14,7 @@ const TeacherLogin = ({setLogin}) => {
     navigate('/')
   }
   return (
-    <LoginContainer >
+    <LoginContainer > 
       <LoginInnerContainer>
         <FormStyle action='submit'> 
         <h3>Teacher Login</h3>

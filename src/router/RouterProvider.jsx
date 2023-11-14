@@ -9,6 +9,7 @@ import Classes from "../pages/teacherPages/classes/Classes";
 import Books from "../pages/teacherPages/books/Books";
 import BookDetails from "../pages/teacherPages/books/BookDetails";
 import LessonCalendar from "../pages/calendars/LessonCalendar";
+import SelectedInfo from "../selectionInfo/SelectedInfo";
 
 const RouterProvider = () => {
   
@@ -25,6 +26,7 @@ const RouterProvider = () => {
         <Route path='/books' element={<Books/>}/>
         <Route path='/books/:id' element={<BookDetails/>}/>
         <Route path='/calendar' element={<LessonCalendar />} />
+        <Route path='/selectedInfo' element={<SelectedInfo />} />
       </Route>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register />}>
