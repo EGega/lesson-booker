@@ -24,7 +24,7 @@ const RouterProvider = () => {
         <Route path='/classes' element={<Classes/>}/>
         <Route path='/books' element={<Books/>}/>
         <Route path='/books/:id' element={<BookDetails/>}/>
-        <Route path='calendar' element={<LessonCalendar />} />
+        <Route path='/calendar' element={<LessonCalendar />} />
       </Route>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register />}>
