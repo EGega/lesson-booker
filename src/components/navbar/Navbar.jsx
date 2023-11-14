@@ -10,7 +10,7 @@ const Navbar = () => {
      <div className={styles.linkDiv}>
       <li><Link to="/">Profile</Link></li>
       <li><Link to="/">Lessons</Link></li>
-      <li><Link to="/">Calendar</Link></li>
+      <li><Link to="/calendar">Calendar</Link></li>
      </div>
      <div className={styles.imgDiv}>
       <LoginBtn><Link to="/login">Log Out</Link></LoginBtn>
