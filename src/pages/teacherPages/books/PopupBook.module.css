@@ -1,0 +1,15 @@
+.container {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.202);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+}
+
+.buttonX {
+    font-size: 30px;
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+}
