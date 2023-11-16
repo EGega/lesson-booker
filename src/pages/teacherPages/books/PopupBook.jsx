@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { selectCart } from "../../../store/index.js"
 import styled from "./PopupBook.module.css"
-const PopupBook = (popUp, showPopUp) => {
+const PopupBook = ({popUp, showPopUp}) => {
     const cart = useSelector(selectCart)
     const { selectedBooks} = cart
     console.log(popUp);
