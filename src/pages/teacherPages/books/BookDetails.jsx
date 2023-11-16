@@ -31,7 +31,6 @@ const BookDetails = () => {
             </div>
         </div>
             <button className={styled.goBackBtn} onClick={ () => navigate(-1)}>  &#x2190; Go Back</button>   
-           <Link to="/selectedInfo">SelectedBooks</Link> 
         </>
     )
 }
