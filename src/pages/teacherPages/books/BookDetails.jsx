@@ -4,7 +4,7 @@ import styled from "./BookDetails.module.css"
 import Navbar from '../../../components/navbar/Navbar.jsx';
 import { useDispatch } from "react-redux";
 import { addBookToCart } from "../../../store/index.js";
-import { Link } from "react-router-dom";
+import PopupBook from "./PopupBook.jsx";
 const BookDetails = () => {
     const {id} = useParams()
     const book = books.find((e) => e.id === parseInt(id))
@@ -30,7 +30,8 @@ const BookDetails = () => {
             <p> { freeTrial ? "Free Trial Available" : "No Free Trial"}</p>
             </div>
         </div>
-            <button className={styled.goBackBtn} onClick={ () => navigate(-1)}>  &#x2190; Go Back</button>   
+            <button className={styled.goBackBtn} onClick={ () => navigate(-1)}>  &#x2190; Go Back</button>
+            <PopupBook />
         </>
     )
 }
