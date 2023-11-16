@@ -7,7 +7,7 @@ import { addBookToCart } from "../../../store/index.js";
 import PopupBook from "./PopupBook.jsx";
 import { useState } from "react";
 const BookDetails = () => {
-    
+    const [popUp, showPopUp] = useState(false)
     const {id} = useParams()
     const book = books.find((e) => e.id === parseInt(id))
     const {title, author, image, pbhouse, freeTrial } = book
@@ -25,6 +25,7 @@ const BookDetails = () => {
              <img src={image} className={styled.image} alt="" />
              <button className={styled.btn} onClick={() => {
                addThisBook()
+               showPopUp(true)
              }}>Use This Book</button>
             </div>
             <div className={styled.infoDiv}>
@@ -36,7 +37,7 @@ const BookDetails = () => {
         </div>
             <button className={styled.goBackBtn} onClick={ () => navigate(-1)}>  &#x2190; Go Back</button>
 
-            <PopupBook />
+            { popUp ? <PopupBook popUp={popUp} showPopUp={showPopUp} /> : null }
         </>
     )
 }
