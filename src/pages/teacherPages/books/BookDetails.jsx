@@ -2,8 +2,6 @@ import { useParams, useNavigate } from "react-router-dom"
 import { books } from "../../../data/books.js"
 import styled from "./BookDetails.module.css"
 import Navbar from '../../../components/navbar/Navbar.jsx';
-import { useDispatch } from "react-redux";
-import { addBookToCart } from "../../../store/index.js";
 import PopupBook from "./PopupBook.jsx";
 import { useState } from "react";
 const BookDetails = () => {
@@ -12,11 +10,6 @@ const BookDetails = () => {
     const book = books.find((e) => e.id === parseInt(id))
     const {title, author, image, pbhouse, freeTrial } = book
     const navigate = useNavigate ();
-    const dispatch = useDispatch();
-
-    const addThisBook = () => {
-        dispatch(addBookToCart(book))
-    }
     return (
         <>
         <Navbar />
