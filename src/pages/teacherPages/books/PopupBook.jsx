@@ -13,11 +13,12 @@ const PopupBook = ({popUp, showPopUp}) => {
           return( <div className={styled.select}>
             <img src={book.image} className={styled.image} alt="" />
             <h2>{book.title}</h2>
-            <button className={styled.add}>Add to list</button>
-            <button className={styled.cancel}>Cancel</button>
+          <div className={styled.buttons}>
+            <button onClick={() => showPopUp(false)} className={styled.add}>Add to list</button>
+            <button onClick={() => showPopUp(false)} className={styled.cancel}>Cancel</button>
+          </div>
           </div>)
           })}
-         <button  onClick={() => showPopUp(false) } className={styled.buttonX}> &#10005;</button>
       </div>
     </div>
     </>
