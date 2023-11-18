@@ -24,7 +24,6 @@ const BookDetails = () => {
              <div className={styled.imgDiv}>
              <img src={image} className={styled.image} alt="" />
              <button className={styled.btn} onClick={() => {
-               addThisBook()
                showPopUp(true)
              }}>Use This Book</button>
             </div>
@@ -37,7 +36,7 @@ const BookDetails = () => {
         </div>
             <button className={styled.goBackBtn} onClick={ () => navigate(-1)}>  &#x2190; Go Back</button>
 
-            { popUp ? <PopupBook popUp={popUp} showPopUp={showPopUp} /> : null }
+            { popUp ? <PopupBook popUp={popUp} showPopUp={showPopUp} book={book}  /> : null }
         </>
     )
 }
