@@ -17,20 +17,25 @@ background-color: antiquewhite;
     border-right: 3px solid green;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.289), 0 6px 20px 0 rgba(0, 0, 0, 0.494);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
 }
 .image {
-    width: 30%;
-    margin-left: 15px;
+    width: 200px;
     border-radius: 50%;
     border: 2px solid green;
 }
 
 .genInfo {
-    margin-left: 25px;
+
 }
 
-.middleSide img {
-  width: 30%;
+.middleSide img{
+  width: 200px;
+  display: block;
+  margin-bottom: 30px;
+}
+.middleSide h2 {
+    text-align: center;
+    margin-bottom: 50%;
 }

@@ -19,8 +19,8 @@ const Profile = () => {
           </div>
           <div className={styled.middleSide}>
             <h2>Certificates</h2>
-            {/* <img src={Toefl} alt="" />
-            <img src={teachingCert} alt="" /> */}
+            <img src={Toefl} alt="" />
+            <img src={teachingCert} alt="" />
           </div>
           <div className={styled.rightSide}>
             <h3>Completed Lessons: </h3>
