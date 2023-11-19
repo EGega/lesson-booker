@@ -1,0 +1,19 @@
+.container {
+width: 100%;
+height: calc(100vh - 65px);
+margin-top: 65px;
+padding-top:20px ;
+background-color: antiquewhite;
+}
+.personalInfo {
+    margin-left: 25px;
+    border-left: 3px solid green;
+}
+.image {
+    width: 20%;
+    margin-left: 15px;
+}
+
+.genInfo {
+    margin-left: 15px;
+}
