@@ -4,7 +4,9 @@ import { NavbarStyle } from '../styled/navbarStyled/navbar'
 import { Link } from 'react-router-dom'
 import styles from "./Navbar.module.css"
 import { LoginBtn } from '../styled/LoginStyle.styled'
+import { useNavigate } from 'react-router-dom'
 const Navbar = () => {
+  const navigate = useNavigate()
   return (
     <NavbarStyle>
      <div className={styles.linkDiv}>
@@ -15,7 +17,7 @@ const Navbar = () => {
      <div className={styles.imgDiv}>
       <LoginBtn><Link to="/login">Log Out</Link></LoginBtn>
       <Link to="/">Teacher Enea</Link>
-      <img className={styles.avatarImage} src={eneaPic} alt="username will come here" />
+      <img className={styles.avatarImage} onClick={() => navigate("/profile")} src={eneaPic} alt="username will come here" />
      </div>
     </NavbarStyle>
 
