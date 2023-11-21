@@ -4,6 +4,14 @@ import Navbar from "../../../components/navbar/Navbar"
 import Toefl from "../../../assets/certificates/TOEFL_Certificate.png"
 import teachingCert from "../../../assets/certificates/English_Teacher_Certificate.png"
 const Profile = () => {
+  const [enlargedImg, setenlargedImg] = useState(null)
+
+  const openCertModal = (imageURl) => {
+    setenlargedImg(imageURl)
+  }
+  const closeCertModal = () => {
+    setenlargedImg(null)
+  }
   return (
     <>
     <Navbar />
