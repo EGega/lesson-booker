@@ -3,6 +3,8 @@ import styled from "./Profile.module.css"
 import Navbar from "../../../components/navbar/Navbar"
 import Toefl from "../../../assets/certificates/TOEFL_Certificate.png"
 import teachingCert from "../../../assets/certificates/English_Teacher_Certificate.png"
+import { useState } from "react"
+import CertificateModal from "./CertificateModal"
 const Profile = () => {
   const [enlargedImg, setenlargedImg] = useState(null)
 
@@ -18,17 +20,17 @@ const Profile = () => {
     <div className={styled.container}>
          <div className={styled.personalInfo}>
           <div className={styled.leftSide}>
-          <img src={eneaPic}  className={styled.image} alt="" />
-          <h3 className={styled.genInfo}>Enea Gega</h3>
-          <h3 className={styled.genInfo}>English Teacher</h3>
-          <h3 className={styled.genInfo}>29 Years Old</h3>
-          <h3 className={styled.genInfo}>Albania</h3>
-          <h3 className={styled.genInfo}>TOEFL</h3>
+            <img src={eneaPic}  className={styled.image} alt="" />
+            <h3 className={styled.genInfo}>Enea Gega</h3>
+            <h3 className={styled.genInfo}>English Teacher</h3>
+            <h3 className={styled.genInfo}>29 Years Old</h3>
+            <h3 className={styled.genInfo}>Albania</h3>
+            <h3 className={styled.genInfo}>TOEFL</h3>
           </div>
           <div className={styled.middleSide}>
             <h2>Certificates</h2>
-            <img src={Toefl} alt="" />
-            <img src={teachingCert} alt="" />
+            <img src={Toefl} alt="" onClick={ () => openCertModal(Toefl)} />
+            <img src={teachingCert} alt="" onClick={ () => openCertModal(teachingCert)} />
           </div>
           <div className={styled.rightSide}>
             <h2>General Info</h2>
@@ -41,6 +43,9 @@ const Profile = () => {
           </div>
          </div>
     </div>
+      {enlargedImg && (
+        <CertificateModal imageUrl={enlargedImg} onClose={closeCertModal} />
+      )}
     </>
   )
 }
