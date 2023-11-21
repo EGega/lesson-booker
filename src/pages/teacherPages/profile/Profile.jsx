@@ -23,10 +23,13 @@ const Profile = () => {
             <img src={teachingCert} alt="" />
           </div>
           <div className={styled.rightSide}>
+            <h2>General Info</h2>
+            <div>
             <h3>Completed Lessons: </h3>
             <h3>Awaiting Lessons</h3>
             <h3>Students</h3>
             <h4>Today's Lessons</h4>
+            </div>
           </div>
          </div>
     </div>

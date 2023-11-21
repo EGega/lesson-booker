@@ -34,8 +34,13 @@ background-color: antiquewhite;
   width: 200px;
   display: block;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 .middleSide h2 {
     text-align: center;
     margin-bottom: 50%;
+}
+
+.rightSide h2{
+ margin-bottom: 80%;
 }
