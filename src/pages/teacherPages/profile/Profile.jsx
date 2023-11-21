@@ -5,6 +5,7 @@ import Toefl from "../../../assets/certificates/TOEFL_Certificate.png"
 import teachingCert from "../../../assets/certificates/English_Teacher_Certificate.png"
 import { useState } from "react"
 import CertificateModal from "./CertificateModal"
+import { Link } from "react-router-dom"
 const Profile = () => {
   const [enlargedImg, setenlargedImg] = useState(null)
 
@@ -38,7 +39,7 @@ const Profile = () => {
             <h3>Completed Lessons: </h3>
             <h3>Awaiting Lessons</h3>
             <h3>Students</h3>
-            <h4>Today's Lessons</h4>
+           <Link to={"/lessoninfo"}> <h4>Today's Lessons</h4></Link>
             </div>
           </div>
          </div>
