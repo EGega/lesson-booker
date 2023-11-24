@@ -6,6 +6,7 @@ import teachingCert from "../../../assets/certificates/English_Teacher_Certifica
 import { useState } from "react"
 import CertificateModal from "./CertificateModal"
 import { Link } from "react-router-dom"
+import ProfileEditor from "./profileEditor/ProfileEditor"
 const Profile = () => {
   const [enlargedImg, setenlargedImg] = useState(null)
 
@@ -21,12 +22,7 @@ const Profile = () => {
     <div className={styled.container}>
          <div className={styled.personalInfo}>
           <div className={styled.leftSide}>
-            <img src={eneaPic}  className={styled.image} alt="" />
-            <h3 className={styled.genInfo}>Enea Gega</h3>
-            <h3 className={styled.genInfo}>English Teacher</h3>
-            <h3 className={styled.genInfo}>29 Years Old</h3>
-            <h3 className={styled.genInfo}>Albania</h3>
-            <h3 className={styled.genInfo}>TOEFL</h3>
+          <ProfileEditor />
           </div>
           <div className={styled.middleSide}>
             <h2>Certificates</h2>
