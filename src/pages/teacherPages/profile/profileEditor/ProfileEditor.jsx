@@ -2,7 +2,7 @@ import{ useState } from 'react'
 import eneaPic from "../../../../assets/enea.jpg"
 import styled from './ProfileEditor.module.css'
 const ProfileEditor = () => {
-
+  
 const [teacherInfo, setTeacherInfo] = useState({
   name: "Enea Gega",
   profession: "English Teacher",
@@ -11,9 +11,12 @@ const [teacherInfo, setTeacherInfo] = useState({
   certifications: "TOEFL",
   introVideo: "https://www.google.com"
 })
+
+const [editing, setEditing] = useState(true)
   return (
     <>
-     <div>
+    {!editing ? 
+    <div>
      <img src={eneaPic}  className={styled.image} alt="" />
        <h3>{teacherInfo.name}</h3>
        <h3>{teacherInfo.profession}</h3>
@@ -21,8 +24,10 @@ const [teacherInfo, setTeacherInfo] = useState({
        <h3>{teacherInfo.country}</h3>
        <h3>{teacherInfo.certifications}</h3>
        <a href={teacherInfo.introVideo} target='blank'>Intro Video</a>
-     </div>
-     <form action="">
+     </div> : 
+     <form onClick={() => {
+      setEditing(false)
+     }} className={styled.form} action="">
       <input type="text" onChange={(e) => {
         setTeacherInfo({...teacherInfo, name: e.target.value })
       }} placeholder='Your name' />
@@ -41,7 +46,7 @@ const [teacherInfo, setTeacherInfo] = useState({
       <input type="text" placeholder='Video Link' onChange={(e) => {
         setTeacherInfo({...teacherInfo, introVideo: e.target.value })
       }} />
-     </form>
+     </form>}
        </>
   )
 }
