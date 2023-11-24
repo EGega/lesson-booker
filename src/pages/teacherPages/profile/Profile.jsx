@@ -1,4 +1,3 @@
-import eneaPic from "../../../assets/enea.jpg"
 import styled from "./Profile.module.css"
 import Navbar from "../../../components/navbar/Navbar"
 import Toefl from "../../../assets/certificates/TOEFL_Certificate.png"
