@@ -25,9 +25,10 @@ const [editing, setEditing] = useState(true)
        <h3>{teacherInfo.certifications}</h3>
        <a href={teacherInfo.introVideo} target='blank'>Intro Video</a>
      </div> : 
-     <form onClick={() => {
+     <form className={styled.form} action="">
+      <button className={styled.closeBtn} onClick={() => {
       setEditing(false)
-     }} className={styled.form} action="">
+     }}>X</button>
       <input type="text" onChange={(e) => {
         setTeacherInfo({...teacherInfo, name: e.target.value })
       }} placeholder='Your name' />
