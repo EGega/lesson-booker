@@ -30,7 +30,7 @@
   
   .closeBtn {
     position: absolute;
-    top: 7%;
+    top: 15%;
     right: 5%;;
     background: none;
     outline: none;
@@ -48,7 +48,7 @@
     display: block;
   }
 
-  .editProfile {
+  .editProfile, .submitBtn {
     margin-top: 20px;
     font-size: 1rem;
     background-color: green;
@@ -57,4 +57,8 @@
     border: none;
     border-radius: 7;
     cursor: pointer;
+  }
+
+  .submitBtn {
+    width: 25%;
   }

@@ -1,6 +1,7 @@
 import{ useState } from 'react'
 import eneaPic from "../../../../assets/enea.jpg"
 import styled from './ProfileEditor.module.css'
+import Navbar from '../../../../components/navbar/Navbar'
 const ProfileEditor = () => {
   
 const [teacherInfo, setTeacherInfo] = useState({
@@ -8,7 +9,6 @@ const [teacherInfo, setTeacherInfo] = useState({
   profession: "Profession:",
   age: "Age:",
   country: "Country:",
-  certifications: "Certifications:",
   introVideo: ""
 })
 
@@ -22,13 +22,13 @@ const [editing, setEditing] = useState(false)
        <h3>{teacherInfo.profession}</h3>
        <h3>{teacherInfo.age}</h3>
        <h3>{teacherInfo.country}</h3>
-       <h3>{teacherInfo.certifications}</h3>
        <a className={styled.videoLink} href={teacherInfo.introVideo} target='blank'>Intro Video</a>
        <button onClick={() => {
       setEditing(true)
      }} className={styled.editProfile}>Edit Profile</button>
      </div> : 
      <form className={styled.form} action="">
+      <Navbar />
       <button className={styled.closeBtn} onClick={() => {
       setEditing(false)
      }}>X</button>
@@ -44,12 +44,12 @@ const [editing, setEditing] = useState(false)
       <input type="text" placeholder='Country' onChange={(e) => {
         setTeacherInfo({...teacherInfo, country: e.target.value })
       }} />
-      <input type="text" placeholder='Certificates' onChange={(e) => {
-        setTeacherInfo({...teacherInfo, certifications: e.target.value })
-      }} />
       <input type="text" placeholder='Video Link' onChange={(e) => {
         setTeacherInfo({...teacherInfo, introVideo: e.target.value })
       }} />
+      <button className={styled.submitBtn} onClick={() => {
+      setEditing(false)
+     }} >Submit</button>
      </form>}
        </>
   )
