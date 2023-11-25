@@ -4,15 +4,15 @@ import styled from './ProfileEditor.module.css'
 const ProfileEditor = () => {
   
 const [teacherInfo, setTeacherInfo] = useState({
-  name: "Enea Gega",
-  profession: "English Teacher",
-  age: "29",
-  country: "Albania",
-  certifications: "TOEFL",
-  introVideo: "https://www.google.com"
+  name: "Name:",
+  profession: "Profession:",
+  age: "Age:",
+  country: "Country:",
+  certifications: "Certifications:",
+  introVideo: ""
 })
 
-const [editing, setEditing] = useState(true)
+const [editing, setEditing] = useState(false)
   return (
     <>
     {!editing ? 
@@ -23,7 +23,10 @@ const [editing, setEditing] = useState(true)
        <h3>{teacherInfo.age}</h3>
        <h3>{teacherInfo.country}</h3>
        <h3>{teacherInfo.certifications}</h3>
-       <a href={teacherInfo.introVideo} target='blank'>Intro Video</a>
+       <a className={styled.videoLink} href={teacherInfo.introVideo} target='blank'>Intro Video</a>
+       <button onClick={() => {
+      setEditing(true)
+     }} className={styled.editProfile}>Edit Profile</button>
      </div> : 
      <form className={styled.form} action="">
       <button className={styled.closeBtn} onClick={() => {
