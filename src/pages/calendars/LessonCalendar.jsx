@@ -4,20 +4,13 @@ import moment from "moment";
 import Navbar from "../../components/navbar/Navbar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import styled from "./LessonCalendar.module.css";
+import CalendarModule from "./calendarModule/CalendarModule";
 const localizer = momentLocalizer(moment);
 const LessonCalendar = () => {
+  const [module, setModule] = useState(false)
   const [events, setEvents] = useState([
-    {
-      start: new Date(2023, 10, 28),
-      end: new Date(2023, 10, 28),
-      title: "Today",
-    },
-    {
-      start: new Date(2023, 10, 29),
-      end: new Date(2023, 10, 29),
-      title: "Tomorrow",
-    },
   ]);
+
   const handleSelectSlot = (slotInfo) => {
     const newEvent = {
       title: 'New Event',
@@ -30,6 +23,7 @@ const LessonCalendar = () => {
   return (
     <>
     {/* <Navbar /> */}
+    <CalendarModule module= {module} setModule= {setModule} />
     <div className={styled.app}>
       <Calendar
         localizer={localizer}

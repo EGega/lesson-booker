@@ -1,0 +1,15 @@
+.container {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.916);
+    width: 10vw;
+    height: 10vh;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    left: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
