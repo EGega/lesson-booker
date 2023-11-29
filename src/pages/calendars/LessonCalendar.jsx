@@ -12,6 +12,7 @@ const LessonCalendar = () => {
   ]);
 
   const handleSelectSlot = (slotInfo) => {
+    setModule(true)
     const newEvent = {
       title: 'New Event',
       start: slotInfo.start,
@@ -23,7 +24,7 @@ const LessonCalendar = () => {
   return (
     <>
     {/* <Navbar /> */}
-    <CalendarModule module= {module} setModule= {setModule} />
+   {  module && <CalendarModule module= {module} setModule= {setModule} /> }
     <div className={styled.app}>
       <Calendar
         localizer={localizer}
