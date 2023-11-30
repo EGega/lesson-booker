@@ -1,0 +1,7 @@
+.rbc-time-slot {
+    min-height: 100px;  /* Set your desired cell height */
+  }
+  
+  .rbc-event {
+   min-height: 100px; /* Set your desired event height */
+  }
