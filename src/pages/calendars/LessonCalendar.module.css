@@ -5,16 +5,21 @@
 .module {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.916);
-    width: 30vw;
-    height: 30vh;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     bottom: 0;
     margin: auto;
     position: absolute;
-    left: 40%;
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     justify-content: center;
     align-items: center;
     z-index: 10;
 }
 
+#lessons, .nameInput {
+    width: 40%;
+    height: 40px;
+}
