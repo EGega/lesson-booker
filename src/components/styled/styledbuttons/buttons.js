@@ -10,6 +10,7 @@ outline: none;
 border-radius: 10px;
 cursor: pointer;
 background-color: green;
+font-size: 1.2rem;
 
 `
 export const ExitButton = styled.button `
