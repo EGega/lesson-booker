@@ -16,8 +16,9 @@ const LessonCalendar = () => {
   ]);
   const [stName, setStName] = useState("")
   const [timeSlotInfo, setTimeSlotInfo] = useState()
+  const lessons = ["Maths", "English", "German", "Programming", "Robotics", "Drama","Okul Öncesi Öğretmenliği"]
+  const [lessonSelected, setLessonSelected] = useState(lessons[0]);
   // 
-  const lessons = ["Maths", "English", "German", "Programming", "Robotics", "Drama"]
 
 
   // Handlers
@@ -28,27 +29,14 @@ const LessonCalendar = () => {
   const exitHandler = () => {
     setModule(false)
   }
-  // const submitHandler = (slotInfo) => {
-  //   setModule(false)
-  //   const newEvent = {
-  //     title: stName,
-  //     start: new Date(slotInfo.start),
-  //     end: new Date (slotInfo.end),
-  //   };
-  //   setEvents([...events, newEvent]);
-  //   console.log('Slot selected:', slotInfo);
-  // }
   const submitHandler = (slotInfo) => {
     setModule(false);
   
-    const start = moment(slotInfo.start).startOf('minute').add(Math.ceil(moment(slotInfo.start).minute() / 30) * 30, 'minutes');
-    const end = moment(start).add(30, 'minutes');
-  
     const newEvent = {
-      title: stName,
-      start: start.toDate(),
-      end: end.toDate(),
-      // lesson: lessons[lessonIndex],
+      title: `${stName} - ${lessonSelected}`,
+      start: slotInfo.start,
+      end: slotInfo.end,
+      lesson: lessonSelected,
       studentName: stName,
     };
   
@@ -61,14 +49,21 @@ const LessonCalendar = () => {
     {/* <Navbar /> */}
    {  module && <div className={styled.module}>
             <input type="text" className={styled.nameInput} onChange={(e) => {
-              setStName(e.target.value)
-            }} placeholder='Enter Your Name' />
-            <select name=""  id={styled.lessons}>
+              setStName(e.target.value)}} placeholder='Enter Your Name' />
+
+            <select name=""  id={styled.lessons} 
+            value={lessonSelected}
+            onChange={(e) => {
+              setLessonSelected(e.target.value)
+            }
+              } >
               {lessons.map((lesson, index) => {
                 return <option  key={index} value={lesson}>{lesson}</option>
               })}
             </select>
-            <SubmitButton onClick={submitHandler(timeSlotInfo)}>
+            <SubmitButton onClick={ () => {
+              submitHandler(timeSlotInfo) }
+            }>
               Submit
             </SubmitButton>
             <ExitButton onClick={exitHandler}>
