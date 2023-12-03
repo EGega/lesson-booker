@@ -103,6 +103,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import './LessonCalendar.css'
 import styled from "./LessonCalendar.module.css";
 import { SubmitButton, ExitButton } from "../../components/styled/styledbuttons/buttons.js";
+import {FaTrash} from "react-icons/fa"
 
 const localizer = momentLocalizer(moment);
 
@@ -149,7 +150,7 @@ const LessonCalendar = () => {
   const CustomEvent = ({ event }) => (
     <div>
       <strong>{event.title}</strong>
-      <button onClick={() => removeEvent(event.id)}>Remove</button>
+      <FaTrash className={styled.trashBin} onClick={() => removeEvent(event.id)} />
     </div>
   );
 
