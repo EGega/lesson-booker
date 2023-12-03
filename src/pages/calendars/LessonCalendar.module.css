@@ -28,7 +28,14 @@
 
 .trashBin {
     position: absolute;
-    cursor: pointer;
     right: 5px;
     top: 5px;
+    color: rgb(255, 71, 71);
+}
+
+.editIcon {
+position: absolute;
+right: 5px;
+bottom: 5px;
+color: rgb(80, 255, 80);
 }

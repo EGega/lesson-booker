@@ -103,7 +103,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import './LessonCalendar.css'
 import styled from "./LessonCalendar.module.css";
 import { SubmitButton, ExitButton } from "../../components/styled/styledbuttons/buttons.js";
-import {FaTrash} from "react-icons/fa"
+import {FaTrash, FaEdit} from "react-icons/fa"
 
 const localizer = momentLocalizer(moment);
 
@@ -151,7 +151,9 @@ const LessonCalendar = () => {
     <div>
       <strong>{event.title}</strong>
       <FaTrash className={styled.trashBin} onClick={() => removeEvent(event.id)} />
+      <FaEdit className={styled.editIcon} onClick={() => handleSelectSlot()} /> 
     </div>
+    // Significant changes needed on the edit button since it doesn't work properly currently
   );
 
   return (
