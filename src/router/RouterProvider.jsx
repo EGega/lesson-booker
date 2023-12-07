@@ -11,6 +11,7 @@ import BookDetails from "../pages/teacherPages/books/BookDetails";
 import LessonCalendar from "../pages/calendars/LessonCalendar";
 import Profile from "../pages/teacherPages/profile/Profile";
 import LessonInfo from "../pages/teacherPages/lessonInfo/LessonInfo";
+import Feedback from "../pages/feedback/Feedback";
 
 const RouterProvider = () => {
   
@@ -29,6 +30,7 @@ const RouterProvider = () => {
         <Route path='/calendar' element={<LessonCalendar />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/lessoninfo' element={<LessonInfo />} />
+        <Route path='/feedback' element={<Feedback />} />
       </Route>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register />}>

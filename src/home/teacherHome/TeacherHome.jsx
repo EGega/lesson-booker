@@ -35,8 +35,8 @@ const Teacherhome = () => {
         <button>Administration</button>
         </div>
         <div>
-        <img src={review} alt="review" />
-        <button>Feedback</button>
+        <img src={review}  alt="review" />
+        <button onClick={() => navigate("/feedback") }>Feedback</button>
         </div>
      </div>
 
