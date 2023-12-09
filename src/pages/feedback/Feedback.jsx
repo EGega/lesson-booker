@@ -5,23 +5,42 @@ import styled from './Feedback.module.css'
 import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from 'react-icons/io';
 import femaleAvatar from "../../assets/femaleAvatar.png"
 import maleAvatar from "../../assets/maleAvatar.jpg"
-
+import { useState } from 'react';
 const Feedback = () => {
+const [rate, setRate] = useState(5)
+const [num, setNum] = useState(1)
+const generateStars = (rating) => {
+  const stars = [];
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rating) {
+      stars.push(<IoIosStar key={i} className={styled.fullStar} onClick={() => handleStar(i)} />);
+    } else {
+      stars.push(<IoIosStarOutline key={i} className={styled.emptyStar} />);
+    }
+  }
+  return stars;
+};
+
+const handleStar = (index) =>  {
+  setNum(() => num + 1)
+  setRate(() => (index + rate) / num )
+  console.log(rate);
+}
 
   return (
     <>
     <Navbar />
     <div className={styled.container}>
        {teachers?.map((teacher, index) => {
-        const {name, birthyear, gender, rating } = teacher
+        const {name, birthyear, gender, rating, id } = teacher
        return (
-           <div className={styled.card} key={index}>
+           <div className={styled.card} key={id}>
             <img src={gender === "Male" ? maleAvatar : femaleAvatar } alt={name} className={styled.img} />
               <h3>{name}</h3>
               <h3>{new Date().getFullYear() - birthyear}</h3>
               <h3>{gender}</h3>
               <h3>Rate Your Teacher</h3>
-              <h3><IoIosStarOutline className={styled.emptyStar}/><IoIosStarOutline className={styled.emptyStar}/><IoIosStarOutline className={styled.emptyStar}/><IoIosStarOutline className={styled.emptyStar}/><IoIosStarOutline className={styled.emptyStar}/></h3>
+              <h3>{generateStars(rating)}</h3>
            </div>
            )
        })}
@@ -31,3 +50,4 @@ const Feedback = () => {
 }
 
 export default Feedback
+

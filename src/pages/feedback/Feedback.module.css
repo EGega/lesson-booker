@@ -1,15 +1,13 @@
 .container {
-    margin-top: 75px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 75px 10px 30px 10px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 20px;
     color: #fff;
 
 }
 
-.emptyStar {
+.emptyStar, .fullStar {
     color: rgb(255, 255, 0);
     font-size: 35px;
     cursor: pointer;
