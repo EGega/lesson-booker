@@ -1,0 +1,24 @@
+.container {
+    margin-top: 75px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+}
+
+.fullStar {
+    color: rgb(164, 164, 8);
+    font-size: 35px;
+}
+
+.card {
+    background-color: #3d322baa;
+}
+
+.img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}

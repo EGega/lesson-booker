@@ -6,6 +6,12 @@ export const teachers = [
     gender: "Male"
   },
   {
+    name: "Sabrina Bush",
+    birthyear: 1999,
+    rating: 5,
+    gender: "Female"
+  },
+  {
     name: "Klemens Riska",
     birthyear: 1994,
     rating: 5,
@@ -16,6 +22,12 @@ export const teachers = [
     birthyear: 1998,
     rating: 5,
     gender: "Male"
+  },
+  {
+    name: "Lizzie Rossie",
+    birthyear: 1978,
+    rating: 5,
+    gender: "Female"
   },
   {
     name: "Johny Noble",
@@ -30,28 +42,23 @@ export const teachers = [
     gender: "Male"
   },
   {
+    name: "Serena Modi",
+    birthyear: 1984,
+    rating: 5,
+    gender: "Female"
+  },
+  {
     name: "Mahmoud Al Khaliji",
     birthyear: 1964,
     rating: 5,
     gender: "Male"
   },
+
   {
     name: "Victor Wang",
     birthyear: 2000,
     rating: 5,
     gender: "Male"
-  },
-  {
-    name: "Sabrina Bush",
-    birthyear: 1999,
-    rating: 5,
-    gender: "Female"
-  },
-  {
-    name: "Lizzie Rossie",
-    birthyear: 1978,
-    rating: 5,
-    gender: "Female"
   },
 
 ]
