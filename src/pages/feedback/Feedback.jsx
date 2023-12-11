@@ -5,7 +5,7 @@ import styled from './Feedback.module.css'
 import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from 'react-icons/io';
 import femaleAvatar from "../../assets/femaleAvatar.png"
 import maleAvatar from "../../assets/maleAvatar.jpg"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 const Feedback = () => {
 const [rate, setRate] = useState(5)
 const [num, setNum] = useState(1)
@@ -27,10 +27,16 @@ const handleStar = (index) =>  {
   console.log("The sum is", sum);
   setNum((prevNum) => prevNum + 1)
   console.log("The num is", num);
-  setRate((prevRate) => (sum + prevRate) / num);
+  // setRate((prevRate) => (sum + prevRate) / num);
+  // console.log("The rate is", rate);
   console.log("The index is", index);
-  console.log("The rate is", rate);
 }
+
+useEffect(() => {
+  setRate((prevRate) => (sum + prevRate) / num);
+  console.log("The sum is", sum);
+  console.log("The rate is", rate);
+}, [sum, num, rate]);
 
   return (
     <>
