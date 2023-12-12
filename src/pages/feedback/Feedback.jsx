@@ -6,7 +6,6 @@ import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from 'react-icons/io';
 import femaleAvatar from "../../assets/femaleAvatar.png"
 import maleAvatar from "../../assets/maleAvatar.jpg"
 import { useState, useEffect } from 'react';
-import Empty from './Empty';
 const Feedback = () => {
 const [num, setNum] = useState(0)
 const [sum, setSum] = useState(0)
