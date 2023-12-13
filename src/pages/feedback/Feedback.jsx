@@ -9,44 +9,34 @@ import { useState, useEffect } from 'react';
 const Feedback = () => {
 const [num, setNum] = useState(0)
 const [sum, setSum] = useState(0)
-const [rate, setRate] = useState(0)
+// const [rate, setRate] = useState(0)
 const generateStars = (rating) => {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
     if (i <= rating) {
       stars.push(<IoIosStar key={i} className={styled.fullStar} onClick={() => handleStar(i)} />);
     } else {
-      stars.push(<IoIosStarOutline key={i} className={styled.emptyStar} />);
+      stars.push(<IoIosStarOutline key={i} className={styled.emptyStar} onClick={() => handleStar(i)} />);
     }
   }
   return stars;
 };
-
+// let theRate = 0
 const handleStar = (index) =>  {
   setSum((prev) => prev + index)
   setNum((prevNum) => prevNum + 1)
   console.log("The num is", num);
   console.log("The sum is", sum);
 //   console.log("The rate is", rate);
-  setRate(sum / num)
-}
+  // setRate(sum / num)
 
+}
 let theRate = Math.round((sum / num))
 
-
-
-// useEffect(() => {
-//   // setRate((prevRate) => (sum + prevRate) / num);
-//   console.log("The num is", num);
-//   console.log("The sum is", sum);
-//   console.log("The rate is", rate);
-
-// }, [ num, sum,  ]);
 
   return (
     <>
     <Navbar />
-    {/* <Empty /> */}
     <div className={styled.container}>
        {teachers?.map((teacher, index) => {
         const {name, birthyear, gender, rating, id } = teacher
@@ -57,8 +47,7 @@ let theRate = Math.round((sum / num))
               <h3>{new Date().getFullYear() - birthyear}</h3>
               <h3>{gender}</h3>
               <h3>Rate Your Teacher</h3>
-              <h4>The teachers rate is equal to {sum} / {num} = {theRate}</h4>
-              <h3>{generateStars(rating)}</h3>
+              <h3>{generateStars(theRate)}</h3>
            </div>
            )
        })}
