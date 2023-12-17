@@ -31,8 +31,8 @@ const handleStar = (index) =>  {
   // setRate(sum / num)
 
 }
-let theRate = Math.round((sum / num))
-
+let theRoundedRate = Math.round((sum / num))
+let theRate = (sum / num)
 
   return (
     <>
@@ -47,7 +47,8 @@ let theRate = Math.round((sum / num))
               <h3>{new Date().getFullYear() - birthyear}</h3>
               <h3>{gender}</h3>
               <h3>Rate Your Teacher</h3>
-              <h3>{generateStars(theRate)}</h3>
+              <h3>{(Math.round(theRate* 100) / 100).toFixed(2)} <IoIosStar className={styled.teacherStar}></IoIosStar></h3>
+              <h3>{generateStars(theRoundedRate)}</h3>
            </div>
            )
        })}

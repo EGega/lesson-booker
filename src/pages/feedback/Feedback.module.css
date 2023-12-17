@@ -12,7 +12,9 @@
     font-size: 35px;
     cursor: pointer;
 }
-
+.teacherStar {
+    color: rgb(255, 255, 12);
+}
 .card {
     background-color: #3d322baa;
     padding-left: 20px;

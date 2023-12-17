@@ -10,7 +10,7 @@ export const teachers = [
     id: 2,
     name: "Sabrina Bush",
     birthyear: 1999,
-    rating: 0,
+    rating: 5,
     gender: "Female"
   },
   {
