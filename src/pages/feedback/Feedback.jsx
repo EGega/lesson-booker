@@ -7,32 +7,43 @@ import femaleAvatar from "../../assets/femaleAvatar.png"
 import maleAvatar from "../../assets/maleAvatar.jpg"
 import { useState, useEffect } from 'react';
 const Feedback = () => {
-const [num, setNum] = useState(0)
-const [sum, setSum] = useState(0)
-// const [rate, setRate] = useState(0)
-const generateStars = (rating) => {
-  const stars = [];
+const [teacherRatings, setTeacherRatings] = useState({});
+
+// const generateStars = (rating) => {
+//   const stars = [];
+//   for (let i = 1; i <= 5; i++) {
+//     if (i <= rating) {
+//       stars.push(<IoIosStar key={i} className={styled.fullStar} onClick={() => handleStar(i)} />);
+//     } else {
+//       stars.push(<IoIosStarOutline key={i} className={styled.emptyStar} onClick={() => handleStar(i)} />);
+//     }
+//   }
+//   return stars;
+// };
+
+
+const handleStar = (teacherId, index) => {
+  setTeacherRatings((prevRatings) => ({
+    ...prevRatings,
+    [teacherId]: {
+      sum: (prevRatings[teacherId]?.sum || 0) + index,
+      num: (prevRatings[teacherId]?.num || 0) + 1,
+    },
+  }))
+}
+
+const generateStars = (teacherId) => {
+  const {sum = 0, num = 0} = teacherRatings[teacherId] || {}
+  const stars = []
   for (let i = 1; i <= 5; i++) {
-    if (i <= rating) {
-      stars.push(<IoIosStar key={i} className={styled.fullStar} onClick={() => handleStar(i)} />);
+    if (i <= sum / num) {
+      stars.push(<IoIosStar key={i} className={styled.fullStar} onClick={() => handleStar(teacherId, i)} />);
     } else {
-      stars.push(<IoIosStarOutline key={i} className={styled.emptyStar} onClick={() => handleStar(i)} />);
+      stars.push(<IoIosStarOutline key={i} className={styled.emptyStar} onClick={() => handleStar(teacherId, i)} />);
     }
   }
   return stars;
-};
-// let theRate = 0
-const handleStar = (index) =>  {
-  setSum((prev) => prev + index)
-  setNum((prevNum) => prevNum + 1)
-  console.log("The num is", num);
-  console.log("The sum is", sum);
-//   console.log("The rate is", rate);
-  // setRate(sum / num)
-
 }
-let theRoundedRate = Math.round((sum / num))
-let theRate = (sum / num)
 
   return (
     <>
@@ -47,8 +58,8 @@ let theRate = (sum / num)
               <h3>{new Date().getFullYear() - birthyear}</h3>
               <h3>{gender}</h3>
               <h3>Rate Your Teacher</h3>
-              <h3>{(Math.round(theRate* 100) / 100).toFixed(2)} <IoIosStar className={styled.teacherStar}></IoIosStar></h3>
-              <h3>{generateStars(theRoundedRate)}</h3>
+              <h3 className={styled.teacherRate}>{(Math.round((teacherRatings[id]?.sum / teacherRatings[id]?.num || 0) * 100) / 100).toFixed(2)} <IoIosStar className={styled.teacherStar}></IoIosStar></h3>
+              <h3>{generateStars(id)}</h3>
            </div>
            )
        })}
