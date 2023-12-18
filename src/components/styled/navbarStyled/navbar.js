@@ -11,4 +11,5 @@ font-size: 20px;
 align-items: center;
 justify-content: space-between;
 background-color: #3d322bed;
+z-index: 100;
 `

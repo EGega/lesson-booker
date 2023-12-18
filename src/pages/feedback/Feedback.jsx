@@ -35,8 +35,9 @@ const handleStar = (teacherId, index) => {
 const generateStars = (teacherId) => {
   const {sum = 0, num = 0} = teacherRatings[teacherId] || {}
   const stars = []
+  console.log("sum: ", sum, "num: ", num);
   for (let i = 1; i <= 5; i++) {
-    if (i <= sum / num) {
+    if (i <= (sum / num) - 0.5) {
       stars.push(<IoIosStar key={i} className={styled.fullStar} onClick={() => handleStar(teacherId, i)} />);
     } else {
       stars.push(<IoIosStarOutline key={i} className={styled.emptyStar} onClick={() => handleStar(teacherId, i)} />);
@@ -59,7 +60,7 @@ const generateStars = (teacherId) => {
               <h3>{gender}</h3>
               <h3>Rate Your Teacher</h3>
               <h3 className={styled.teacherRate}>{(Math.round((teacherRatings[id]?.sum / teacherRatings[id]?.num || 0) * 100) / 100).toFixed(2)} <IoIosStar className={styled.teacherStar}></IoIosStar></h3>
-              <h3>{generateStars(id)}</h3>
+              <button className={styled.generateStarsBtn}>{generateStars(id)}</button>
            </div>
            )
        })}
