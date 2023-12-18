@@ -35,9 +35,8 @@ const handleStar = (teacherId, index) => {
 const generateStars = (teacherId) => {
   const {sum = 0, num = 0} = teacherRatings[teacherId] || {}
   const stars = []
-  console.log("sum: ", sum, "num: ", num);
   for (let i = 1; i <= 5; i++) {
-    if (i <= (sum / num) - 0.5) {
+    if (i <= (sum / num) + 0.5) {
       stars.push(<IoIosStar key={i} className={styled.fullStar} onClick={() => handleStar(teacherId, i)} />);
     } else {
       stars.push(<IoIosStarOutline key={i} className={styled.emptyStar} onClick={() => handleStar(teacherId, i)} />);
