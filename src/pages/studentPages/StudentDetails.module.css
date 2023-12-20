@@ -4,4 +4,13 @@
     margin-top: 65px;
     padding-top:20px ;
     background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .img {
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
     }

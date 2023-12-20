@@ -11,12 +11,18 @@ const StudentDetails = () => {
     <>
       <Navbar />
       <div className={styled.container}>
-      <img src={student.img} alt="" />
-      <h3>{student.firstName}</h3>
-      <h3>{student.lastName}</h3>
-      <h3>{student.gender}</h3>
-      <h3>{student.age}</h3>
-
+        <div className={styled.infoSide}>
+          <img className={styled.img} src={student.img} alt="" />
+          <h3>{student.firstName}</h3>
+          <h3>{student.lastName}</h3>
+          <h3>{student.gender}</h3>
+          <h3>{student.age}</h3>
+        </div>
+        <div className={styled.commentSide}>
+         <h3>Completed Lessons</h3>
+         <label>Leave a comment</label>
+         <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
       </div>
     </>
   )
