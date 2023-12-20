@@ -3,8 +3,8 @@ import TeacherHome from "../home/teacherHome/TeacherHome";
 import Login from '../login/Login'
 import Register from '../login/Register';
 import PrivateRouter from './PrivateRouter';
-import Students from "../pages/teacherPages/Students";
-import StudentDetails from "../pages/teacherPages/StudentDetails";
+import Students from "../pages/studentPages/Students";
+import StudentDetails from "../pages/studentPages/StudentDetails";
 import Classes from "../pages/teacherPages/classes/Classes";
 import Books from "../pages/teacherPages/books/Books";
 import BookDetails from "../pages/teacherPages/books/BookDetails";
