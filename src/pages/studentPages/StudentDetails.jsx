@@ -28,6 +28,7 @@ const StudentDetails = () => {
          <div className={styled.inputDiv}>
           <label>Leave a comment</label>
           <textarea className={styled.comment} type="text" id='comment' > </textarea>
+          <SubmitButton >Submit</SubmitButton>
          </div>
         </div>
       </div>
