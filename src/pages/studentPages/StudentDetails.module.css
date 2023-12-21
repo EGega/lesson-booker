@@ -2,15 +2,31 @@
     width: 100%;
     height: calc(100vh - 65px);
     margin-top: 65px;
-    padding-top:20px ;
+    padding:20px 20px 0 20px ;
+
     background-color: antiquewhite;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     }
 
 
-    .img {
+.img {
         height: 300px;
         width: 300px;
         border-radius: 50%;
-    }
+}
+
+.inputDiv {
+    display: grid;
+}
+
+.comment {
+    height: 500px;
+    text-align: top;
+    resize: none;
+    outline: none;
+    font-size: 20px;
+}
+.goBackBtn {
+    margin-top: 20px;
+}
