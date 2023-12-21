@@ -5,9 +5,15 @@ import { Link } from 'react-router-dom'
 import styles from "./Navbar.module.css"
 import { LoginBtn } from '../styled/LoginStyle.styled'
 import { useNavigate } from 'react-router-dom'
+import {useState} from 'react'
+import NavbarModule from './navbarModule/NavbarModule'
 const Navbar = () => {
   const navigate = useNavigate()
+  // Part of my previous toggler
+  // const [navbarModule, setNavbarModule] = useState(1)
+  const [navbarModuleVisibility, setNavbarModuleVisibility] = useState(false)
   return (
+    <>
     <NavbarStyle>
      <div className={styles.linkDiv}>
       <li><Link to="/profile">Profile</Link></li>
@@ -16,10 +22,18 @@ const Navbar = () => {
      </div>
      <div className={styles.imgDiv}>
       <LoginBtn><Link to="/login">Log Out</Link></LoginBtn>
-      <Link to="/">Teacher Enea</Link>
-      <img className={styles.avatarImage} onClick={() => navigate("/profile")} src={eneaPic} alt="username will come here" />
+      <Link to="/profile">Teacher Enea</Link>
+      <img className={styles.avatarImage} onClick={() => {
+        setNavbarModuleVisibility((prevValue) => !prevValue)
+      }} src={eneaPic} alt="username will come here" />
      </div>
+      {/* The code below is just another way to create an "effective toggler that I just came up with"  */}
+      {/* { navbarModule % 2 === 0 ? <NavbarModule className={styles.navbarModule} /> : null} */}
+
+      {navbarModuleVisibility && <NavbarModule className={styles.navbarModule} />}
+
     </NavbarStyle>
+    </>
 
   )
 }
