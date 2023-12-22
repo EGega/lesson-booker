@@ -30,7 +30,7 @@ const Navbar = () => {
       {/* The code below is just another way to create an "effective toggler that I just came up with"  */}
       {/* { navbarModule % 2 === 0 ? <NavbarModule className={styles.navbarModule} /> : null} */}
 
-      {navbarModuleVisibility && <NavbarModule className={styles.navbarModule} />}
+      {navbarModuleVisibility && <NavbarModule img={eneaPic} className={styles.navbarModule} />}
 
     </NavbarStyle>
     </>

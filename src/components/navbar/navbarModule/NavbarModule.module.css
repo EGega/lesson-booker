@@ -1,10 +1,10 @@
 .container {
-    height: 300px;
-    width: 200px;
-    background-color: #fff;
+    height: 350px;
+    width: 250px;
+    background-color: antiquewhite;
     position: absolute;
-    top: 60px;
-    right: 0px;
+    top: 70px;
+    right: 30px;
     
 }
 
@@ -12,7 +12,6 @@
     padding-left: 0px;
     display: flex;
     flex-direction: column;
-   
     gap: 10px;
 }
 .container li {
@@ -27,4 +26,12 @@
   background-color: rgba(228, 228, 228, 0.736);
   border-radius: 5px;
 
+}
+
+.img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-top: 20px;
+    /* height: 100px; */
 }

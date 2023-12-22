@@ -1,13 +1,16 @@
 import React from 'react'
 import styled from "./NavbarModule.module.css"
 import { useNavigate } from 'react-router-dom'
-const NavbarModule = () => {
+const NavbarModule = ({img}) => {
     const navigate = useNavigate()
   return (
     <>
       <div className={styled.container}>
+        <img src={img} className={styled.img} />
         <ul>
-            <li>Profile</li>
+            <li onClick={() => {
+            navigate('/profile')
+            }} >Profile</li>
             <li>Settings</li>
             <li>Contact</li>
             <li onClick={() => {
