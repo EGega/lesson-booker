@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from "./NavbarModule.module.css"
+import { useNavigate } from 'react-router-dom'
 const NavbarModule = () => {
+    const navigate = useNavigate()
   return (
     <>
       <div className={styled.container}>
@@ -8,7 +10,9 @@ const NavbarModule = () => {
             <li>Profile</li>
             <li>Settings</li>
             <li>Contact</li>
-            <li>Log Out</li>
+            <li onClick={() => {
+            navigate('/login')
+            }}>Log Out</li>
         </ul>
       </div>
     </>

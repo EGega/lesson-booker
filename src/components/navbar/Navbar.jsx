@@ -4,11 +4,11 @@ import { NavbarStyle } from '../styled/navbarStyled/navbar'
 import { Link } from 'react-router-dom'
 import styles from "./Navbar.module.css"
 import { LoginBtn } from '../styled/LoginStyle.styled'
-import { useNavigate } from 'react-router-dom'
+
 import {useState} from 'react'
 import NavbarModule from './navbarModule/NavbarModule'
 const Navbar = () => {
-  const navigate = useNavigate()
+
   // Part of my previous toggler
   // const [navbarModule, setNavbarModule] = useState(1)
   const [navbarModuleVisibility, setNavbarModuleVisibility] = useState(false)
@@ -21,7 +21,7 @@ const Navbar = () => {
       <li><Link to="/calendar">Calendar</Link></li>
      </div>
      <div className={styles.imgDiv}>
-      <LoginBtn><Link to="/login">Log Out</Link></LoginBtn>
+      <LoginBtn><Link to="/">Home</Link></LoginBtn>
       <Link to="/profile">Teacher Enea</Link>
       <img className={styles.avatarImage} onClick={() => {
         setNavbarModuleVisibility((prevValue) => !prevValue)
