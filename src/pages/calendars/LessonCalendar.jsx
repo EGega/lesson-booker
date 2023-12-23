@@ -6,7 +6,7 @@ import './LessonCalendar.css'
 import styled from "./LessonCalendar.module.css";
 import { SubmitButton, ExitButton } from "../../components/styled/styledbuttons/buttons.js";
 import {FaTrash, FaEdit} from "react-icons/fa"
-
+import Navbar from "../../components/navbar/Navbar.jsx";
 const localizer = momentLocalizer(moment);
 
 const LessonCalendar = () => {
@@ -95,6 +95,7 @@ const LessonCalendar = () => {
 
   return (
     <>
+    <Navbar />
       {module && (
         <div className={styled.module}>
           <input
