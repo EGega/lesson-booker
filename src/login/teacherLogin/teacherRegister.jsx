@@ -6,9 +6,16 @@ import {BsFillPersonVcardFill} from "react-icons/bs"
 import {BsPersonVcard} from "react-icons/bs"
 import { loginIcons } from '../../components/styled/iconStylers'
 import { useNavigate } from 'react-router-dom'
+import { loginActions } from '../../store'
+import { useDispatch } from 'react-redux'
 
 const TeacherRegister = ({setRegister}) => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const registerHandler = () => {
+    dispatch(loginActions.loginToggler())
+    navigate('/')
+  }
   return (
     <LoginContainer >
       <LoginInnerContainer>
@@ -30,7 +37,7 @@ const TeacherRegister = ({setRegister}) => {
           <RiLockPasswordFill style={loginIcons}/>
           <input type="password" id='password'  placeholder='Type your password' />
           </InputStyle>
-          <LoginBtn> Register </LoginBtn>
+          <LoginBtn onClick={registerHandler}> Register </LoginBtn>
         </FormStyle>
         {/* Not a user */}
         <NotAnUser >

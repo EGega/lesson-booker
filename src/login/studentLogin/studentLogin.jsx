@@ -11,7 +11,7 @@ const StudentLogin = ({setLogin}) => {
   const dispatch = useDispatch()
   // loginhandler
   const loginHandler = () => {
-    dispatch(loginActions.loginToggler())
+    dispatch(loginActions.loginToggler()) 
     navigate('/')
   }
   return (

@@ -32,7 +32,10 @@ const TeacherLogin = ({setLogin}) => {
         <NotAnUser >
          <div>
           <p>Not a user?</p>
-          <LoginBtn> Register Here </LoginBtn>
+          <LoginBtn onClick={(e) => {
+            e.preventDefault()
+            navigate('/register')
+          }}> Register Here </LoginBtn>
          </div>
          <div>
           <p>Are You a Student?</p>
