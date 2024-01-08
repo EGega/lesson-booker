@@ -6,8 +6,9 @@ const loginSlice = createSlice({
   name: "logger",
   initialState: initialState,
   reducers: {
-    loginToggler(state) {
+    loginToggler(state, action) {
      state.logged = !state.logged
+     state.role = action.payload
     }
   }
 })

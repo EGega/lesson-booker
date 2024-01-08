@@ -1,12 +1,18 @@
 import { Outlet, Navigate } from 'react-router-dom';
 import React from 'react'
 import { useSelector } from 'react-redux';
+import TeacherRouter from './TeacherRouter';
+import StudentRouter from './StudentRouter';
 const PrivateRouter = () => {
-const isLogged = useSelector(state => state.login.logged )
-console.log(isLogged)
-  return (
-    isLogged ? <Outlet/> : <Navigate to='/login'/> 
+const { logged, role } = useSelector((state) => state.login);
+console.log(logged)
+return (
+  logged ? (
+    role === 'teacher' ? <TeacherRouter /> : <StudentRouter />
+  ) : (
+    <Navigate to='/login' />
   )
+);
 }
 
 export default PrivateRouter

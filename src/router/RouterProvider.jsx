@@ -12,7 +12,8 @@ import LessonCalendar from "../pages/calendars/LessonCalendar";
 import Profile from "../pages/teacherPages/profile/Profile";
 import LessonInfo from "../pages/teacherPages/lessonInfo/LessonInfo";
 import Feedback from "../pages/feedback/Feedback";
-
+import TeacherRouter from "./TeacherRouter";
+import StudentRouter from "./StudentRouter";
 const RouterProvider = () => {
   
   return (
@@ -20,6 +21,7 @@ const RouterProvider = () => {
  <BrowserRouter >
     <Routes>
       <Route element={<PrivateRouter />}>
+        
         <Route path='/' element={<TeacherHome/>}/> 
         {/* The route should change since that is tonbly the teacher homepage not the home page */}
         <Route path='/students' element={<Students/>}/>

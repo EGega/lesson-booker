@@ -1,9 +1,11 @@
 import React from 'react'
+import { Outlet, Navigate } from 'react-router-dom';
 
 const TeacherRouter = () => {
+    console.log(Outlet);
   return (
-    <div>TeacherRouter</div>
-  )
+    <Outlet />
+    )
 }
 
 export default TeacherRouter

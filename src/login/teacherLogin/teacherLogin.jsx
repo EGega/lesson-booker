@@ -10,7 +10,7 @@ const TeacherLogin = ({setLogin}) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const loginHandler = () => {
-    dispatch(loginActions.loginToggler())
+    dispatch(loginActions.loginToggler("teacher"))
     navigate('/')
   }
   return (
