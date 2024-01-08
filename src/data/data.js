@@ -80,5 +80,21 @@ export const students = [
   gender: "Male",
   img: femaleAvatar,
   age: 17,
-  }
+  },
+  {
+    id: 11,
+    firstName: "Saimir",
+    lastName: "Gega",
+    gender: "Male",
+    img: maleAvatar,
+    age: 25,
+    },
+    {
+      id: 10,
+      firstName: "Amelja",
+      lastName: "Llomi",
+      gender: "Female",
+      img: femaleAvatar,
+      age: 6,
+      },
 ]
