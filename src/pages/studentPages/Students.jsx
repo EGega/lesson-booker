@@ -23,7 +23,7 @@ const Students = () => {
         <h3>{age}</h3>
       </div>
      
-       <Link to={`/students/${student.id}`} className={styled.btn}>
+       <Link to={`/students/${id}`} className={styled.btn}>
               Details
       </Link>
      

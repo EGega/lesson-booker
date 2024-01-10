@@ -1,4 +1,4 @@
-export const teachers = [
+ export const teachers = [
   {
     id: 1,
     name: "Enea Gega",
