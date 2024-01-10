@@ -21,18 +21,7 @@ const RouterProvider = () => {
  <BrowserRouter >
     <Routes>
       <Route element={<PrivateRouter />}>
-        
-        <Route path='/' element={<TeacherHome/>}/> 
-        {/* The route should change since that is tonbly the teacher homepage not the home page */}
-        <Route path='/students' element={<Students/>}/>
-        <Route path='/students/:id' element={<StudentDetails />} />
-        <Route path='/classes' element={<Classes/>}/>
-        <Route path='/books' element={<Books/>}/>
-        <Route path='/books/:id' element={<BookDetails/>}/>
-        <Route path='/calendar' element={<LessonCalendar />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/lessoninfo' element={<LessonInfo />} />
-        <Route path='/feedback' element={<Feedback />} />
+        < Route path='/*' element={<TeacherRouter />} />
       </Route>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register />}>
