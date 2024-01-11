@@ -11,12 +11,12 @@ const Teachers = () => {
   <Navbar />
   <div className={styled.container}>
    {teachers.map((teacher) => {
-    const {id, name, birthyear, rating, gender} = teacher
+    const {id, name, birthyear, gender} = teacher
     return (
         <div className={styled.card} key={id}>
         <img className={styled.img} src={gender === "Male" ? maleAvatar : femaleAvatar} />
         <div className={styled.name}>
-          <h2>{name}</h2>
+          <h2>{ gender === "Male" ? "Mr. " + name : "Ms. " + name}</h2>
         </div>
         <div className={styled.genAge}>
           <h3>{new Date().getFullYear() - birthyear}</h3>
