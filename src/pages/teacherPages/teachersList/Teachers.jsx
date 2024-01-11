@@ -3,6 +3,8 @@ import Navbar from '../../../components/navbar/Navbar'
 import styled from './Teachers.module.css'
 import {teachers} from '../../../data/teachersList'
 import { Link } from 'react-router-dom'
+import maleAvatar from "../../../assets/maleAvatar.jpg"
+import femaleAvatar from "../../../assets/femaleAvatar.png"
 const Teachers = () => {
   return (
   <>
@@ -12,7 +14,7 @@ const Teachers = () => {
     const {id, name, birthyear, rating, gender} = teacher
     return (
         <div className={styled.card} key={id}>
-
+        <img className={styled.img} src={gender === "Male" ? maleAvatar : femaleAvatar} />
         <div className={styled.name}>
           <h2>{name}</h2>
         </div>
