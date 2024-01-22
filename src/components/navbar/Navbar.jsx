@@ -4,13 +4,11 @@ import { NavbarStyle } from '../styled/navbarStyled/navbar'
 import { Link } from 'react-router-dom'
 import styles from "./Navbar.module.css"
 import { LoginBtn } from '../styled/LoginStyle.styled'
-
 import {useState} from 'react'
 import NavbarModule from './navbarModule/NavbarModule'
+import { useSelector } from 'react-redux'
 const Navbar = () => {
-
-  // Part of my previous toggler
-  // const [navbarModule, setNavbarModule] = useState(1)
+const {logged, role} =  useSelector((state) => state.login)
   const [navbarModuleVisibility, setNavbarModuleVisibility] = useState(false)
   return (
     <>
@@ -22,7 +20,7 @@ const Navbar = () => {
      </div>
      <div className={styles.imgDiv}>
       <LoginBtn><Link to="/">Home</Link></LoginBtn>
-      <Link to="/profile">Teacher Enea</Link>
+      <Link to="/profile"> {role === "student" ? "Student Enea " : "Teacher Enea" }</Link>
       <img className={styles.avatarImage} onClick={() => {
         setNavbarModuleVisibility((prevValue) => !prevValue)
       }} src={eneaPic} alt="username will come here" />

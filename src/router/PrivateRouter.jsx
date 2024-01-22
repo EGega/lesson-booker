@@ -5,7 +5,7 @@ import TeacherRouter from './TeacherRouter';
 import StudentRouter from './StudentRouter';
 const PrivateRouter = () => {
 const { logged, role } = useSelector((state) => state.login);
-console.log(logged)
+
 return (
   logged ? (
     role === 'teacher' ? <TeacherRouter /> : <StudentRouter />
@@ -13,6 +13,6 @@ return (
     <Navigate to='/login' />
   )
 );
-}
+} 
 
 export default PrivateRouter
