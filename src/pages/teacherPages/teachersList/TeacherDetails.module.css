@@ -31,3 +31,14 @@
 .goBackBtn {
     margin-top: 20px;
 }
+
+.xButton {
+  height: 30px;
+  width: 50px; 
+  position: absolute;
+  cursor: pointer;
+}
+
+/* .introVideo {
+    position: relative;
+} */

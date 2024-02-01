@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import maleAvatar from "../../../assets/maleAvatar.jpg"
 import femaleAvatar from "../../../assets/femaleAvatar.png"
 import introVideo from "../../../assets/videos/introVideo.webm"
+import { AiOutlineClose } from "react-icons/ai";
 const TeacherDetails = () => {
   const {id} = useParams()
   const teacher = teachers.find((teacher) => teacher.id === parseInt(id))
@@ -38,9 +39,17 @@ const TeacherDetails = () => {
           <textarea className={styled.comment} type="text" id='comment'  > </textarea>
           <SubmitButton >Submit</SubmitButton>
           <div className={styled.introVideo}>
-          {video ? <video width="640" height="360" controls>
-           <source src={introVideo} type="video/webm" />
-         </video> :  <SubmitButton onClick={videoHandler}>Intro Video</SubmitButton> }
+          {video 
+          ?
+          <div className={styled.video}>
+            <video width="640" height="360" controls>
+            <source src={introVideo} type="video/webm" />
+          </video>
+           <AiOutlineClose className={styled.xButton}></AiOutlineClose>
+          </div> 
+
+          :  
+         <SubmitButton onClick={videoHandler}>Intro Video</SubmitButton> }
           </div>
          </div>
         </div>
