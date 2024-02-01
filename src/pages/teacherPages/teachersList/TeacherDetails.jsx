@@ -45,7 +45,7 @@ const TeacherDetails = () => {
             <video width="640" height="360" controls>
             <source src={introVideo} type="video/webm" />
           </video>
-           <AiOutlineClose className={styled.xButton}></AiOutlineClose>
+           <AiOutlineClose onClick={videoHandler} className={styled.xButton}></AiOutlineClose>
           </div> 
 
           :  
