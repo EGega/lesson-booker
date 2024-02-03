@@ -11,7 +11,7 @@ return (
     role === 'teacher' ? <TeacherRouter /> : <StudentRouter />
   ) : (
     <Navigate to='/login' />
-  )
+  ) 
 );
 } 
 

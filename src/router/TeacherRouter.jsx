@@ -3,7 +3,7 @@ import  {BrowserRouter, Routes, Route} from "react-router-dom";
 import TeacherHome from "../home/teacherHome/TeacherHome";
 import Students from "../pages/studentPages/Students";
 import StudentDetails from "../pages/studentPages/StudentDetails";
-import Classes from "../pages/teacherPages/classes/Classes";
+import TeacherClasses from '../pages/teacherPages/classes/teacherClasses/TeacherClasses';
 import Books from "../pages/teacherPages/books/Books";
 import BookDetails from "../pages/teacherPages/books/BookDetails";
 import LessonCalendar from "../pages/calendars/LessonCalendar";
@@ -17,7 +17,7 @@ const TeacherRouter = () => {
         <Route path='' element={<TeacherHome/>}/> 
         <Route path='/students' element={<Students/>}/>
         <Route path='/students/:id' element={<StudentDetails />} />
-        <Route path='/classes' element={<Classes/>}/>
+        <Route path='/classes' element={<TeacherClasses/>}/>
         <Route path='/books' element={<Books/>}/>
         <Route path='/books/:id' element={<BookDetails/>}/>
         <Route path='/calendar' element={<LessonCalendar />} />
