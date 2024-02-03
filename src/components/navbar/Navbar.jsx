@@ -15,7 +15,7 @@ const {logged, role} =  useSelector((state) => state.login)
     <NavbarStyle>
      <div className={styles.linkDiv}>
       <li><Link to="/profile">Profile</Link></li>
-      {role === "teacher" ? <li><Link to="/classes">Bookings</Link></li> : <li><Link to="/classes"> My Lessons</Link></li>}
+      {role === "teacher" ? <li><Link to="/teacher-classes">Bookings</Link></li> : <li><Link to="/student-classes"> My Lessons</Link></li>}
       
       <li><Link to="/calendar">Calendar</Link></li>
      </div>

@@ -1,0 +1,19 @@
+.container {
+    margin-top: 65px;
+    padding-top:20px ;
+    background-color: antiquewhite;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+ .container img {
+    height: 80%;
+    width: 80%;
+}
+
+.bookAlesson, .buyBook, .completed, .refer {
+    height: 100%;
+    width: 100%;
+}

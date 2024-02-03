@@ -17,7 +17,7 @@ const StudentRouter = () => {
       <Route path='/' element={<StudentHome />}/>
         <Route path='/teachers' element={<Teachers/>}/>
         <Route path='/teachers/:id' element={<TeacherDetails />} />
-        <Route path='/classes' element={<StudentClasses/>}/>
+        <Route path='/student-classes' element={<StudentClasses/>}/>
         <Route path='/books' element={<Books/>}/>
         <Route path='/books/:id' element={<BookDetails/>}/>
         <Route path='/calendar' element={<LessonCalendar />} />
