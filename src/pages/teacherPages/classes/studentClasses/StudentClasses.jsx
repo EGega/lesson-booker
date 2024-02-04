@@ -16,11 +16,11 @@ const StudentClasses = () => {
           <img src={bookNow} alt="BookNow" />
           <ClickButton>Book a Lesson <BsFillMouse2Fill /> </ClickButton>
         </div>
-        <div className={ `${styled.buyBook} ${styled.img}` }>
+        <div className={ `${styled.subscribe} ${styled.img}` }>
         <img src={subscribe} alt="Subscribe" />
           <ClickButton>Full Time Courses <BsFillMouse2Fill /> </ClickButton>
         </div>
-        <div className={`${styled.completed} ${styled.img}`}>
+        <div className={`${styled.buyBook} ${styled.img}`}>
           <img src={buyBooks} alt="BuyBooks" />
           <ClickButton>Buy Books <BsFillMouse2Fill /> </ClickButton>
         </div>

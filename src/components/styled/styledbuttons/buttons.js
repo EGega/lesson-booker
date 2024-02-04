@@ -33,6 +33,7 @@ background-color: white;
 export const ClickButton = styled.button `
 width: 40%;
 font-size: 1rem;
+height: 50px;
 padding: 10px;
 color: #fff;
 border: none;
