@@ -24,3 +24,7 @@
 .linkDiv a:hover {
   color: #fff;
 }
+
+.imageDiv {
+  position: relative;
+}
