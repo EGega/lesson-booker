@@ -18,7 +18,7 @@ const BookDetails = () => {
              <img src={image} className={styled.image} alt="" />
              <button className={styled.btn} onClick={() => {
                showPopUp(true)
-             }}>Use This Book</button>
+             }}>Buy This Book</button>
             </div>
             <div className={styled.infoDiv}>
             <h3>{title}</h3>

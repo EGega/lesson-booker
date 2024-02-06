@@ -7,21 +7,25 @@ import subscribe from "../../../../assets/classes/subscribe.jpg"
 import refer from  "../../../../assets/classes/refer.jpg"
 import completedLessons from "../../../../assets/classes/completedLessons.jpg"
 import goToLesson from "../../../../assets/classes/goToYourLesson.jpg"
-
 import { ClickButton } from '../../../../components/styled/styledbuttons/buttons'
 import { BsFillMouse2Fill } from "react-icons/bs";
+import { useNavigate } from 'react-router-dom'
 const StudentClasses = () => {
+
+  const navigate = useNavigate()
   return (
      <>
      <Navbar />
       <div className={styled.container}>
         <div className={styled.goToLessons}>
           <img src={goToLesson} alt="Enter Your Lesson" />  
-          <ClickButton>Enter Your Lesson <BsFillMouse2Fill /> </ClickButton>
+          <ClickButton >Enter Your Lesson <BsFillMouse2Fill /> </ClickButton>
         </div>
         <div className={styled.bookAlesson}>
           <img src={bookNow} alt="Book Now" />  
-          <ClickButton>Book a Lesson <BsFillMouse2Fill /> </ClickButton>
+          <ClickButton onClick={() => {
+           navigate("/calendar")
+          }}>Book a Lesson <BsFillMouse2Fill /> </ClickButton>
         </div>
         <div className={styled.completedLessons}>
           <img src={completedLessons} alt="completed Lessons" />

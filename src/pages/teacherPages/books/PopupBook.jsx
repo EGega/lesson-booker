@@ -25,7 +25,7 @@ const addThisBook = () => {
              <img src={book.image} className={styled.image} alt="" />
              <h2>{book.title}</h2>
            <div className={styled.buttons}>
-             <button onClick={addThisBook} className={styled.add}>Add to list</button>
+             <button onClick={addThisBook} className={styled.add}>Add to cart</button>
              <button onClick={() => showPopUp(false)} className={styled.cancel}>Cancel</button>
            </div>
           </div>
