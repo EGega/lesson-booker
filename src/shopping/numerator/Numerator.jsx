@@ -1,11 +1,17 @@
 import React from 'react'
 import styled from "./Numerator.module.css"
+import { useSelector } from "react-redux"
+import { selectCart } from "../../store/index"
 const Numerator = () => {
+const cart = useSelector(selectCart)
+const { selectedBooks} = cart
+console.log(selectedBooks.length);
   return (
     <>
-     <div className={styled.main}>
-        3
-     </div>
+    {selectedBooks.length !== 0 ? <div className={styled.main}>
+        1
+     </div> : null}
+
     </>
   )
 }
