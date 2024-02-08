@@ -2,7 +2,7 @@
     position: absolute;
     top: -5px;
     right: -10px;
-    background-color: red;
+    background-color: rgba(12, 7, 4, 0.93);
     color: #fff;
     padding: 2px 4px;
     margin: 0;
@@ -11,3 +11,6 @@
     cursor: pointer;
 }
 
+.number {
+    margin: 0;
+}

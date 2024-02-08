@@ -20,7 +20,7 @@ const StudentHome = () => {
         </div>
         <div>
         <img src={classes} alt="classes" />
-        <button onClick={() => navigate('/classes')} >Classes</button>
+        <button onClick={() => navigate('/student-classes')} >Classes</button>
         </div>
         <div>
         <img src={books} alt="books" />

@@ -10,6 +10,7 @@ import LessonCalendar from "../pages/calendars/LessonCalendar";
 import Profile from "../pages/teacherPages/profile/Profile";
 import LessonInfo from "../pages/teacherPages/lessonInfo/LessonInfo";
 import Feedback from "../pages/feedback/Feedback";
+import Cart from '../shopping/cart/Cart';
 const StudentRouter = () => {
   return (
     <>
@@ -24,6 +25,8 @@ const StudentRouter = () => {
         <Route path='/profile' element={<Profile />} />
         <Route path='/lessoninfo' element={<LessonInfo />} />
         <Route path='/feedback' element={<Feedback />} />
+        <Route path='/cart' element={<Cart />} />
+      
     </Routes>
     </>
   )
