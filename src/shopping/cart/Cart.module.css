@@ -1,10 +1,46 @@
 .container {
     margin-top: 90px;
     margin-left: 10%;
-    margin-right: 20%;
+    margin-right: 30%;
+    padding-bottom: 50px;
+}
+
+.products {
+ display: grid;
+ grid-template-columns: repeat(1, 1fr);
+ gap: 30px;
+}
+.product {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    background-color: antiquewhite;
 }
 
 .img {
     height: 150px;
     width: 150px;
+}
+.nameAndPrice {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+    width: 100%;
+}
+
+.nameAmountDelete {
+    width: 80%;
+}
+.incDecDel {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.incDe
+
+.delete {
+    cursor: pointer;
+    font-size: 23px;
+
+    /* fill: #fff; */
 }
