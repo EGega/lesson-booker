@@ -47,10 +47,6 @@
     fill: #ff0000;
 }
 
-.delete:hover {
-    font-size: 22px;
-}
-
 .incDec {
 display: flex;
 gap: 10px;

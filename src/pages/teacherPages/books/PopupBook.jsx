@@ -8,7 +8,7 @@ const dispatch = useDispatch();
 const addThisBook = () => {
   const isBookAlreadySelected = selectedBooks.some(
     (selectedBook) => selectedBook.id === book.id
-  );
+  ); 
   if (!isBookAlreadySelected) {
     dispatch(addBookToCart(book));
   }

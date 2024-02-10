@@ -4,6 +4,8 @@ import styled from './Cart.module.css'
 import TotalCart from './totalCart/TotalCart'
 import { useSelector } from 'react-redux'
 import { selectCart } from "../../store/index"
+import { useDispatch } from 'react-redux';
+import { removeBookFromCart } from "../../store/index.js";
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
 import { FaPlus } from "react-icons/fa";
@@ -11,9 +13,12 @@ import { FaRegTrashAlt } from "react-icons/fa";
 const Cart = () => {
   const cart = useSelector(selectCart)
   const {selectedBooks} = cart
+  const dispatch = useDispatch()
+  const removeHandler = (id) => {
+    dispatch(removeBookFromCart(id))
+  }
   return (
     <>
-
     <Navbar/>
    <div className={styled.container}>
     <div className={styled.products} >
@@ -33,7 +38,7 @@ const Cart = () => {
                <input  type="number" min="0" max="10" className={styled.number} />
                <CiCirclePlus className={styled.inc} />
               </div>
-            <FaRegTrashAlt  className={styled.delete}/>
+            <FaRegTrashAlt onClick={() => removeHandler(id)} className={styled.delete}/>
             </div>
           </div>
           <h3>{price} $</h3>
