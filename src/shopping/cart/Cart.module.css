@@ -1,14 +1,17 @@
 .container {
     margin-top: 90px;
     margin-left: 10%;
-    margin-right: 30%;
+    /* margin-right: 30%; */
     padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .products {
  display: grid;
  grid-template-columns: repeat(1, 1fr);
  gap: 30px;
+ width: 70%;
 }
 .product {
     display: flex;
@@ -33,14 +36,48 @@
 }
 .incDecDel {
     display: flex;
-    width: 100%;
+    width: 70%;
     justify-content: space-between;
 }
-.incDe
+
 
 .delete {
     cursor: pointer;
-    font-size: 23px;
+    font-size: 21px;
+    fill: #ff0000;
+}
 
-    /* fill: #fff; */
+.delete:hover {
+    font-size: 22px;
+}
+
+.incDec {
+display: flex;
+gap: 10px;
+}
+.dec, .inc {
+    cursor: pointer;
+    font-size: 21px;
+}
+.inc {
+    fill: #1dc400;
+}
+.dec {
+    fill: #ff0000;
+}
+
+.number {
+    width: 50px;
+    text-align: center;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

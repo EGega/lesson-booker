@@ -1,22 +1,24 @@
 import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import styled from './Cart.module.css'
+import TotalCart from './totalCart/TotalCart'
 import { useSelector } from 'react-redux'
 import { selectCart } from "../../store/index"
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
-import { AiOutlineDelete } from "react-icons/ai";
+import { FaPlus } from "react-icons/fa";
+import { FaRegTrashAlt } from "react-icons/fa";
 const Cart = () => {
   const cart = useSelector(selectCart)
   const {selectedBooks} = cart
-  console.log(typeof cart.selectedBooks);
   return (
     <>
-   <div className={styled.container}>
+
     <Navbar/>
+   <div className={styled.container}>
     <div className={styled.products} >
       {
-      selectedBooks && 
+        selectedBooks && 
       selectedBooks?.map((el) => {
         const {title, author, price, image, id } = el
        return ( 
@@ -28,21 +30,22 @@ const Cart = () => {
           <div className={styled.incDecDel} >
               <div className={styled.incDec}>
                <CiCircleMinus className={styled.dec} />
-               <input  type="number" min="0" max="10" className={styled.number} value="1" />
+               <input  type="number" min="0" max="10" className={styled.number} />
                <CiCirclePlus className={styled.inc} />
               </div>
-            <AiOutlineDelete className={styled.delete} />
+            <FaRegTrashAlt  className={styled.delete}/>
             </div>
           </div>
           <h3>{price} $</h3>
           </div>
         </div>
          )    
-      })
-          
-     }
+        })
+        
+      }
 
     </div>
+      <TotalCart />
    </div>
     </>
   )
