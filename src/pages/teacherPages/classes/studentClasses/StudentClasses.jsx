@@ -37,7 +37,9 @@ const StudentClasses = () => {
         </div>
         <div className={styled.buyBook}>
           <img src={buyBooks} alt="BuyBooks" />
-          <ClickButton>Buy Books <BsFillMouse2Fill /> </ClickButton>
+          <ClickButton onClick={() => {
+            navigate('/books')
+          }}>Buy Books <BsFillMouse2Fill /> </ClickButton>
         </div>
         <div className={styled.refer}>
         <img src={refer} alt="refer" />
