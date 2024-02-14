@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import styled from './Cart.module.css'
 import TotalCart from './totalCart/TotalCart'
@@ -8,8 +7,8 @@ import { useDispatch } from 'react-redux';
 import { removeBookFromCart } from "../../store/index.js";
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
-import { FaPlus } from "react-icons/fa";
 import { FaRegTrashAlt } from "react-icons/fa";
+import { useState } from 'react'
 const Cart = () => {
   const cart = useSelector(selectCart)
   const {selectedBooks} = cart
@@ -17,6 +16,15 @@ const Cart = () => {
   const removeHandler = (id) => {
     dispatch(removeBookFromCart(id))
   }
+  const [values, setValues] = useState(selectedBooks.map(() => 1)) 
+  const increaseHandler = (index) => {
+    setValues((prevValues) => {
+      const newValues = [...prevValues];
+      newValues[index] = newValues[index] + 1;
+      return newValues;
+    });
+  }
+
   return (
     <>
     <Navbar/>
@@ -24,7 +32,7 @@ const Cart = () => {
     <div className={styled.products} >
       {
         selectedBooks && 
-      selectedBooks?.map((el) => {
+      selectedBooks?.map((el, index) => {
         const {title, author, price, image, id } = el
        return ( 
        <div className={styled.product} key={id}>
@@ -35,8 +43,8 @@ const Cart = () => {
           <div className={styled.incDecDel} >
               <div className={styled.incDec}>
                <CiCircleMinus className={styled.dec} />
-               <input  type="number" min="0" max="10" className={styled.number} />
-               <CiCirclePlus className={styled.inc} />
+               <input  type="number" min="0" max="10" value={values[index]} className={styled.number}  />
+               <CiCirclePlus onClick={() => increaseHandler(index)} className={styled.inc} />
               </div>
             <FaRegTrashAlt onClick={() => removeHandler(id)} className={styled.delete}/>
             </div>
@@ -57,3 +65,4 @@ const Cart = () => {
 }
 
 export default Cart
+
