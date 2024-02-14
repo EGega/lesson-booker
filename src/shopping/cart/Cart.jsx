@@ -17,6 +17,7 @@ const Cart = () => {
     dispatch(removeBookFromCart(id))
   }
   const [values, setValues] = useState(selectedBooks.map(() => 1)) 
+  console.log(values);
   const increaseHandler = (index) => {
     setValues((prevValues) => {
       const newValues = [...prevValues];
@@ -28,11 +29,11 @@ const Cart = () => {
     setValues((prevValues) => {
       const newValues = [...prevValues]
       newValues[index] = newValues[index] - 1
+      if (newValues[index] === 0) {
+        dispatch(removeBookFromCart(id))
+      }
       return newValues
     })
-    if (values[index] === 0) {
-      dispatch(removeBookFromCart(id))
-    }
     console.log(values);
   } 
 
