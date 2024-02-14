@@ -24,6 +24,17 @@ const Cart = () => {
       return newValues;
     });
   }
+  const decreaseHandler = (index, id) => {
+    setValues((prevValues) => {
+      const newValues = [...prevValues]
+      newValues[index] = newValues[index] - 1
+      return newValues
+    })
+    if (values[index] === 0) {
+      dispatch(removeBookFromCart(id))
+    }
+    console.log(values);
+  } 
 
   return (
     <>
@@ -42,7 +53,9 @@ const Cart = () => {
            <h4>{title} by {author}</h4>
           <div className={styled.incDecDel} >
               <div className={styled.incDec}>
-               <CiCircleMinus className={styled.dec} />
+               <CiCircleMinus className={styled.dec} onClick={() => {
+                  decreaseHandler(index, id)}
+               }  />
                <input  type="number" min="0" max="10" value={values[index]} className={styled.number}  />
                <CiCirclePlus onClick={() => increaseHandler(index)} className={styled.inc} />
               </div>
