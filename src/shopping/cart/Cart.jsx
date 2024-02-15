@@ -4,7 +4,7 @@ import TotalCart from './totalCart/TotalCart'
 import { useSelector } from 'react-redux'
 import { selectCart } from "../../store/index"
 import { useDispatch } from 'react-redux';
-import { removeBookFromCart, increaseThePrice } from "../../store/index.js";
+import { removeBookFromCart, increaseThePrice, decreaseThePrice } from "../../store/index.js";
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -17,26 +17,13 @@ const Cart = () => {
   const removeHandler = (id) => {
     dispatch(removeBookFromCart(id))
   }
-  // const [values, setValues] = useState(selectedBooks.map(() => 1)) 
-  // const increaseHandler = (index) => {
-  //   setValues((prevValues) => {
-  //     const newValues = [...prevValues];
-  //     newValues[index] = newValues[index] + 1;
-  //     return newValues;
-  //   });
-  // }
+
   const increaseHandler = (index) => {
   dispatch(increaseThePrice(index))
   }
-  const decreaseHandler = (index, id) => {
-    // setValues((prevValues) => {
-    //   const newValues = [...prevValues]
-    //   newValues[index] = newValues[index] - 1
-    //   if (newValues[index] === 0) {
-    //     dispatch(removeBookFromCart(id))
-    //   }
-    //   return newValues
-    // })
+  const decreaseHandler = (index, quantity, id) => {
+   dispatch(decreaseThePrice(index))
+
   } 
 
   return (
@@ -57,7 +44,7 @@ const Cart = () => {
           <div className={styled.incDecDel} >
               <div className={styled.incDec}>
                <CiCircleMinus className={styled.dec} onClick={() => {
-                  decreaseHandler(index, id)}
+                  decreaseHandler(index, quantity, id)}
                }  />
                <input  type="number" min="0" max="10" value={quantity} className={styled.number}  />
                <CiCirclePlus onClick={() => increaseHandler(index)} className={styled.inc} />
