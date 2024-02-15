@@ -21,7 +21,7 @@ const Cart = () => {
   const increaseHandler = (index) => {
   dispatch(increaseThePrice(index))
   }
-  const decreaseHandler = (index, quantity, id) => {
+  const decreaseHandler = (index) => {
    dispatch(decreaseThePrice(index))
    dispatch(removeBookIfQuantityZero(index))
 
