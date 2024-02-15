@@ -4,7 +4,7 @@ import TotalCart from './totalCart/TotalCart'
 import { useSelector } from 'react-redux'
 import { selectCart } from "../../store/index"
 import { useDispatch } from 'react-redux';
-import { removeBookFromCart, increaseThePrice, decreaseThePrice } from "../../store/index.js";
+import { removeBookFromCart, increaseThePrice, decreaseThePrice, removeBookIfQuantityZero } from "../../store/index.js";
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -23,6 +23,7 @@ const Cart = () => {
   }
   const decreaseHandler = (index, quantity, id) => {
    dispatch(decreaseThePrice(index))
+   dispatch(removeBookIfQuantityZero(index))
 
   } 
 

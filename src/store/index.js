@@ -46,13 +46,19 @@ const cartSlice = createSlice({
     decreaseThePrice: (state, action) => {
       const index = action.payload;
       const book = state.selectedBooks[index];
+      if (book.quantity > 0) {
+        book.quantity -= 1;
+        const initialPrice = book.initialPrice || 0;
+        const newPrice = initialPrice * book.quantity;
+        book.price = newPrice;
+      }
+    },
+    removeBookIfQuantityZero: (state, action) => {
+      const index = action.payload;
+      const book = state.selectedBooks[index];
       if (book.quantity === 0) {
         state.selectedBooks.splice(index, 1);
       }
-      book.quantity -= 1;
-      const initialPrice = book.initialPrice || 0; // Make 
-      const newPrice = initialPrice * book.quantity;
-      book.price = newPrice;
     },
     
   }
@@ -73,6 +79,6 @@ const store = configureStore({
 // Here I am exploring the actions, I do have only one actions which is the loginToggler that will work as a switch
 
 export const loginActions = loginSlice.actions
-export const { addBookToCart, removeBookFromCart, increaseThePrice, decreaseThePrice } = cartSlice.actions;
+export const { addBookToCart, removeBookFromCart, increaseThePrice, decreaseThePrice, removeBookIfQuantityZero } = cartSlice.actions;
 export const selectCart = (state) => state.cart
 export default store
