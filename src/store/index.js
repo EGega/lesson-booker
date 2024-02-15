@@ -20,11 +20,36 @@ const cartSlice = createSlice({
   }, 
   reducers: {
     addBookToCart: (state, action) => {
-      state.selectedBooks.push(action.payload)
+      const { id, title, author, price, image } = action.payload;
+      state.selectedBooks.push({
+        id,
+        title,
+        author,
+        price,
+        image,
+        quantity: 1,
+        initialPrice: price,
+      });
     },
     removeBookFromCart: (state, action) => {
+      console.log(action.payload);
       state.selectedBooks = state.selectedBooks.filter(book => book.id !== action.payload)
-    }
+    },
+    increaseThePrice: (state, action) => {
+      const index = action.payload;
+      const book = state.selectedBooks[index];
+      
+      // Increase the quantity
+      book.quantity += 1;
+
+      // Calculate the new price based on the initial price and updated quantity
+      const initialPrice = book.initialPrice || 0; // Make sure initialPrice is set
+      const newPrice = initialPrice * book.quantity;
+      
+      // Update the price
+      book.price = newPrice;
+    },
+    
   }
 })
  
@@ -43,6 +68,6 @@ const store = configureStore({
 // Here I am exploring the actions, I do have only one actions which is the loginToggler that will work as a switch
 
 export const loginActions = loginSlice.actions
-export const { addBookToCart, removeBookFromCart } = cartSlice.actions;
+export const { addBookToCart, removeBookFromCart, increaseThePrice } = cartSlice.actions;
 export const selectCart = (state) => state.cart
 export default store

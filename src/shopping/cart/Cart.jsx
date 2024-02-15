@@ -4,7 +4,7 @@ import TotalCart from './totalCart/TotalCart'
 import { useSelector } from 'react-redux'
 import { selectCart } from "../../store/index"
 import { useDispatch } from 'react-redux';
-import { removeBookFromCart } from "../../store/index.js";
+import { removeBookFromCart, increaseThePrice } from "../../store/index.js";
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -12,29 +12,31 @@ import { useState } from 'react'
 const Cart = () => {
   const cart = useSelector(selectCart)
   const {selectedBooks} = cart
+  console.log(selectedBooks);
   const dispatch = useDispatch()
   const removeHandler = (id) => {
     dispatch(removeBookFromCart(id))
   }
-  const [values, setValues] = useState(selectedBooks.map(() => 1)) 
-  console.log(values);
+  // const [values, setValues] = useState(selectedBooks.map(() => 1)) 
+  // const increaseHandler = (index) => {
+  //   setValues((prevValues) => {
+  //     const newValues = [...prevValues];
+  //     newValues[index] = newValues[index] + 1;
+  //     return newValues;
+  //   });
+  // }
   const increaseHandler = (index) => {
-    setValues((prevValues) => {
-      const newValues = [...prevValues];
-      newValues[index] = newValues[index] + 1;
-      return newValues;
-    });
+  dispatch(increaseThePrice(index))
   }
   const decreaseHandler = (index, id) => {
-    setValues((prevValues) => {
-      const newValues = [...prevValues]
-      newValues[index] = newValues[index] - 1
-      if (newValues[index] === 0) {
-        dispatch(removeBookFromCart(id))
-      }
-      return newValues
-    })
-    console.log(values);
+    // setValues((prevValues) => {
+    //   const newValues = [...prevValues]
+    //   newValues[index] = newValues[index] - 1
+    //   if (newValues[index] === 0) {
+    //     dispatch(removeBookFromCart(id))
+    //   }
+    //   return newValues
+    // })
   } 
 
   return (
@@ -45,7 +47,7 @@ const Cart = () => {
       {
         selectedBooks && 
       selectedBooks?.map((el, index) => {
-        const {title, author, price, image, id } = el
+        const {title, author, price, image, id, quantity } = el
        return ( 
        <div className={styled.product} key={id}>
           <img src={image} className={styled.img} alt="" />
@@ -57,7 +59,7 @@ const Cart = () => {
                <CiCircleMinus className={styled.dec} onClick={() => {
                   decreaseHandler(index, id)}
                }  />
-               <input  type="number" min="0" max="10" value={values[index]} className={styled.number}  />
+               <input  type="number" min="0" max="10" value={quantity} className={styled.number}  />
                <CiCirclePlus onClick={() => increaseHandler(index)} className={styled.inc} />
               </div>
             <FaRegTrashAlt onClick={() => removeHandler(id)} className={styled.delete}/>

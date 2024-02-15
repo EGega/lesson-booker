@@ -7,7 +7,8 @@ import englishFirstGrade from "../assets/books/englishFirstGrade.png"
 import englishSecondGrade from "../assets/books/englishSecondGrade.png" 
 import englishThirdGrade from "../assets/books/englishThirdGrade.png" 
 export const books = [
-{    id: 1,
+{   id: 1,
+    quantity: 1,
     title: "Business English Beginner ",
     pbhouse: "Life of Pi",
     author: "Jenny and Jase Mercury",
@@ -16,6 +17,7 @@ export const books = [
     price: 40
 },
 {   id: 2,
+    quantity: 1,
     title: "Business English Intermediate ",
     pbhouse: "Life of Pi",
     author: "Jenny and Jase Mercury",
@@ -24,6 +26,7 @@ export const books = [
     price: 50
 },
 {   id: 3,
+    quantity: 1,
     title: "Business English Advanced ",
     pbhouse: "Life of Pi",
     author: "Jenny and Jase Mercury",
@@ -32,6 +35,7 @@ export const books = [
     price: 65
 },
 {   id: 4,
+    quantity: 1,
     title: "Spoken English ",
     pbhouse: "HoksFoord Publications",
     author: "Jeremy Jenkins",
@@ -40,6 +44,7 @@ export const books = [
     price: 9
 },
 {   id: 5,
+    quantity: 1,
     title: "English Phonics",
     pbhouse: "Phoenix House",
     author: "Phillip Philly",
@@ -48,6 +53,7 @@ export const books = [
     price: 25
 },
 {   id: 6,
+    quantity: 1,
     title: "English First Grade ",
     pbhouse: "Kampridge",
     author: "Coney McGregor",
@@ -56,6 +62,7 @@ export const books = [
     price: 18
 },
 {   id: 7,
+    quantity: 1,
     title: "English Second Grade ",
     pbhouse: "Kampridge",
     author: "Coney McGregor",
@@ -64,6 +71,7 @@ export const books = [
     price: 19
 },
 {   id: 8,
+    quantity: 1,
     title: "English Third Grade ",
     pbhouse: "Kampridge",
     author: "Coney McGregor",
@@ -72,6 +80,7 @@ export const books = [
     price: 32
 },
 {    id: 9,
+    quantity: 1,
     title: "Business English Beginner ",
     pbhouse: "Life of Pi",
     author: "Jenny and Jase Mercury",
@@ -80,6 +89,7 @@ export const books = [
     price: 35
 },
 {   id: 10,
+    quantity: 1,
     title: "Business English Intermediate ",
     pbhouse: "Life of Pi",
     author: "Jenny and Jase Mercury",
@@ -88,6 +98,7 @@ export const books = [
     price: 15
 },
 {   id: 11,
+    quantity: 1,
     title: "Business English Advanced ",
     pbhouse: "Life of Pi",
     author: "Jenny and Jase Mercury",
@@ -96,6 +107,7 @@ export const books = [
     price: 10
 },
 {   id: 12,
+    quantity: 1,
     title: "Spoken English ",
     pbhouse: "HoksFoord Publications",
     author: "Jeremy Jenkins",
@@ -104,6 +116,7 @@ export const books = [
     price: 50
 },
 {   id: 13,
+    quantity: 1,
     title: "English Phonics",
     pbhouse: "Phoenix House",
     author: "Phillip Philly",
@@ -112,6 +125,7 @@ export const books = [
     price: 40
 },
 {   id: 14,
+    quantity: 1,
     title: "English First Grade ",
     pbhouse: "Kampridge",
     author: "Coney McGregor",
@@ -120,6 +134,7 @@ export const books = [
     price: 20
 },
 {   id: 15,
+    quantity: 1,
     title: "English Second Grade ",
     pbhouse: "Kampridge",
     author: "Coney McGregor",
@@ -128,6 +143,7 @@ export const books = [
     price: 25
 },
 {   id: 16,
+    quantity: 1,
     title: "English Third Grade ",
     pbhouse: "Kampridge",
     author: "Coney McGregor",
