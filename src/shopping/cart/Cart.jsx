@@ -8,7 +8,6 @@ import { removeBookFromCart, increaseThePrice, decreaseThePrice, removeBookIfQua
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
 import { FaRegTrashAlt } from "react-icons/fa";
-import { useState } from 'react'
 const Cart = () => {
   const cart = useSelector(selectCart)
   const {selectedBooks} = cart
@@ -24,7 +23,6 @@ const Cart = () => {
   const decreaseHandler = (index) => {
    dispatch(decreaseThePrice(index))
    dispatch(removeBookIfQuantityZero(index))
-
   } 
 
   return (

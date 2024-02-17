@@ -20,7 +20,7 @@ if(selectedBooks.length === 0) {
     <div className={styled.container}>
       <h4>Selected Items: {selectedBooks.length} </h4>
       <h4>Total Price: {selectedBooks.reduce((acc, curr) => acc + curr.price, 0)} $ </h4>
-      <button className={styled.button} > Complete Shopping </button>
+      <button className={styled.button} onClick={ () =>  {navigate("/checkout")}} > Complete Shopping </button>
     </div> : 
     <div className={styled.redirect}>
         <h2>Redirecting</h2> 
