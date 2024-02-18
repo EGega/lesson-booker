@@ -60,6 +60,9 @@ const CheckoutPage = () => {
                })}
              </select>
          </div>
+         <div className={styled.saveCard}>
+
+         </div>
       </form>
      </div>
     }

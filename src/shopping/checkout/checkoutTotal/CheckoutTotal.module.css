@@ -11,7 +11,7 @@
 
 .book {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr 1fr 0.5fr;
     gap: 10px;
     background-color: #ffd814c6;
 }
@@ -28,4 +28,9 @@
 
 .button:focus {
     transform: scale(1.01);
+}
+.delete {
+    margin: auto;
+    cursor: pointer;
+    fill: #ff0000;
 }
