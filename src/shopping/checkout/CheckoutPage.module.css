@@ -1,0 +1,15 @@
+.container {
+    margin: 7%;
+    text-align: center;
+    box-sizing: border-box;
+}
+.images img {
+    width: 200px;
+    height: auto;
+    cursor:pointer;
+    transition: all 200ms ease-in-out;
+}
+.images img:hover {
+    transform: scale(1.1); 
+
+}

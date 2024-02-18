@@ -31,7 +31,7 @@ background-color: antiquewhite;
   width: 200px;
   display: block;
   margin-bottom: 30px;
-  cursor: pointer;
+  cursor: zoom-in;
 }
 .middleSide h2 {
     text-align: center;
