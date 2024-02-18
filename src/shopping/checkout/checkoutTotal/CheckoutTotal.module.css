@@ -10,8 +10,22 @@
 }
 
 .book {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
     gap: 10px;
-    background-color: antiquewhite;
+    background-color: #ffd814c6;
+}
+
+.button {
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: #ffd814;
+    border-color: #fcd200;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 200ms ease-in-out;
+}
+
+.button:focus {
+    transform: scale(1.01);
 }

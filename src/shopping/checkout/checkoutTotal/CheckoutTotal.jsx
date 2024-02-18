@@ -17,7 +17,7 @@ const CheckoutTotal = () => {
             <img  src={image} alt="" />
             <p>{title}</p>
             <p>{quantity === 1 ? `${quantity} Book` : `${quantity} Books`}</p>
-            <p>Cost {price}$</p>
+            <p>{price}$</p>
           </div> )
         })}
         </div>
