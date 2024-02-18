@@ -39,7 +39,7 @@ const CheckoutPage = () => {
         </div>
          <div className={styled.date}>
           <label htmlFor="">Exp Date</label>
-             <select name="" id="">
+             <select name="" id="months">
               <option value="">1</option>
               <option value="">2</option>
               <option value="">3</option>
@@ -53,8 +53,10 @@ const CheckoutPage = () => {
               <option value="">11</option>
               <option value="">12</option>
              </select>
-             <select name="" id="">
-
+             <select name="" id="years">
+               {years.map((year) => {
+               return <option value={year}> {year} </option>
+               })}
              </select>
          </div>
       </form>
