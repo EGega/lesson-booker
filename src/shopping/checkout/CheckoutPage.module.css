@@ -2,6 +2,7 @@
     margin: 7%;
     text-align: center;
     box-sizing: border-box;
+    display: flex;
 }
 .images img {
     width: 200px;
