@@ -16,8 +16,8 @@ const CheckoutTotal = () => {
           <div className={styled.book}>
             <img  src={image} alt="" />
             <p>{title}</p>
-             <p>{quantity === 1 ? `${quantity} Book` : `${quantity} Books`}</p>
-             <p>Cost {price}$</p>
+            <p>{quantity === 1 ? `${quantity} Book` : `${quantity} Books`}</p>
+            <p>Cost {price}$</p>
           </div> )
         })}
         </div>

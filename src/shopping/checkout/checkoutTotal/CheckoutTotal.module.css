@@ -1,0 +1,17 @@
+.selectedBooks {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.selectedBooks img {
+    height: 50px;
+    width: 50px;
+}
+
+.book {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: antiquewhite;
+}
