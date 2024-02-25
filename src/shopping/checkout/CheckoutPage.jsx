@@ -30,7 +30,7 @@ const CheckoutPage = () => {
     </div>
     {paymentType === "card" && 
      <div className={styled.creditCard}>
-      <form className={styled.formCard} action="">
+      {/* <form className={styled.formCard} action="">
         <div className={styled.number}>
          <label htmlFor="number">Card Number</label>
          <input type="text" name="number" className={styled.numberInput}  id="number" />
@@ -74,7 +74,7 @@ const CheckoutPage = () => {
           <label htmlFor="No">No</label>
           <input type="radio" id="No" name="fav_language" value="No" />
          </div>
-      </form>
+      </form> */}
      </div>
     }
     </div>

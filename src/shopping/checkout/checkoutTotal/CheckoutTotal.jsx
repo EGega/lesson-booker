@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const CheckoutTotal = () => {
   const cart = useSelector(selectCart)
   const {selectedBooks} = cart 
+  console.log(selectedBooks);
   const dispatch = useDispatch()
   const removeHandler = (id) => {
     dispatch(removeBookFromCart(id))
