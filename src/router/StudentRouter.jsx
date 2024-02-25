@@ -12,6 +12,8 @@ import LessonInfo from "../pages/teacherPages/lessonInfo/LessonInfo";
 import Feedback from "../pages/feedback/Feedback";
 import Cart from '../shopping/cart/Cart';
 import CheckoutPage from '../shopping/checkout/CheckoutPage';
+import Success from '../payments/Success';
+import Cancel from '../payments/Cancel';
 const StudentRouter = () => {
   return (
     <>
@@ -28,6 +30,8 @@ const StudentRouter = () => {
         <Route path='/feedback' element={<Feedback />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/checkout' element={<CheckoutPage />} />
+        <Route path='/success' element={<Success />} />
+        <Route path='/cancel' element={<Cancel />} />
     </Routes>
     </>
   )

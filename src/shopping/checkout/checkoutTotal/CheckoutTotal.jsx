@@ -6,8 +6,9 @@ import styled from "./CheckoutTotal.module.css"
 import { FaRegTrashAlt } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
+import { loadStripe } from '@stripe/stripe-js';
 const CheckoutTotal = () => {
+  const apiKey = process.env.PUBLIC_KEY
   const cart = useSelector(selectCart)
   const {selectedBooks} = cart 
   console.log(selectedBooks);
@@ -15,6 +16,23 @@ const CheckoutTotal = () => {
   const removeHandler = (id) => {
     dispatch(removeBookFromCart(id))
   }
+  // const handlePayment = async () => {
+ 
+  //     const response = await fetch('http://localhost:4000/create-checkout-session', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       mode: 'no-cors',
+  //       body: JSON.stringify({ items: selectedBooks }),
+  //     })
+      
+  //     const session = await response.json();
+  //     // // Redirect to the Stripe Checkout page
+  //     window.location.href = `https://checkout.stripe.com/pay/${session.id}`;
+    
+    
+  // };
   return (
     <>
     <div className={styled.container}>
@@ -34,7 +52,7 @@ const CheckoutTotal = () => {
      {
      selectedBooks.length !== 0 && <div>
       <h4>Total Price: {selectedBooks.reduce((acc, curr) => acc + curr.price, 0)} $ </h4>  
-      <button className={styled.button}> Pay </button>
+      <button className={styled.button} onClick={handlePayment}> Pay </button>
     </div> 
      } 
     </div>
