@@ -8,7 +8,10 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
 const CheckoutTotal = () => {
-  const apiKey = process.env.PUBLIC_KEY
+  console.log(process.env);
+  const apiKey = process.env.REACT_APP_PUBLIC_KEY
+  console.log(apiKey);
+  const stripePromise = loadStripe(apiKey)
   const cart = useSelector(selectCart)
   const {selectedBooks} = cart 
   console.log(selectedBooks);
@@ -16,23 +19,20 @@ const CheckoutTotal = () => {
   const removeHandler = (id) => {
     dispatch(removeBookFromCart(id))
   }
-  // const handlePayment = async () => {
- 
-  //     const response = await fetch('http://localhost:4000/create-checkout-session', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       mode: 'no-cors',
-  //       body: JSON.stringify({ items: selectedBooks }),
-  //     })
-      
-  //     const session = await response.json();
-  //     // // Redirect to the Stripe Checkout page
-  //     window.location.href = `https://checkout.stripe.com/pay/${session.id}`;
-    
-    
-  // };
+  const handlePayment = async () => {
+    const stripe = await stripePromise;
+  
+  const session = await fetch('http://localhost:4000/create-checkout-session', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ items: selectedBooks }),
+}).then((res) => res.json());
+
+const result = await stripe.redirectToCheckout({ sessionId: session.id });
+  };
+  
   return (
     <>
     <div className={styled.container}>
