@@ -10,47 +10,35 @@ ___
 3. Redux Toolkit
 4. Styled Components
 5. React Router
+6. Stripe
 ___
 ### Backend
 6. Python
 7. Django
-8. Postgres Sql
-9. Rest Framework
+8. Express JS
+9. Postgres Sql
+10. Rest Framework
 
 ___
 
 **Currently this app is under the construction**
 
-**For the moment a fake log in log out featuure has been added by using Private Routing and Redux Toolkit to store the global log in values**
+What can be currently done in the web app.
 
-*Real Authentication is coming with Django*
+#### Logging In -
+1. It is a fake log in just for the purpose of developing.
+2. The user can log in as a teacher or as a student and will see a home page accordingly to the log in.
+3. The user can Register if it is a first time user.
+#### Rating
+The user can rate any teacher and see their information, including the introduction video.
+#### Update
+The profile of the user can be updated.
+#### Booking
+1. The user can book a lesson through react-big-calendar
+2. The lesson can be deleted or edited, more than one lesson can be booked
+#### Shopping
+The user can buy books, and make real payments through stripe, currently only creditcard, and google payment is supported.
+Wechat and Alipay are on their way.
 
-**When login teachers see a homepage with some features like books, students, teaching videos, booked classes, admin page and feedback.**
-
-*Currently some dummy data comes when we fetch students but this will change with the implementation of Django*
-
-** A unique page is created for each student when we click on each of the student cards / UseParam and ReactRoute has been used
-
-*Router*
-```
-<Route path='/students/:id' element={<StudentDetails />} />
-```
-*StudentDetailPage*
-
-```
-import { useParams } from 'react-router-dom'
-import {students} from '../../data/data.js'
-const StudentDetails = () => {
-  const { id } = useParams();
-  const student = students.find((s) => s.id === parseInt(id));
-  console.log(student);
-  return (
-    <div>{student.firstName}</div>
-  )
-}
-
-export default StudentDetails
-
-//More detailes are being added of course
 ```
 ### This readme file will be constantly updated
