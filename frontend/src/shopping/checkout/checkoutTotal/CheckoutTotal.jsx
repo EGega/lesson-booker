@@ -11,7 +11,7 @@ const CheckoutTotal = () => {
   console.log(process.env);
   const apiKey = process.env.REACT_APP_PUBLIC_KEY
   console.log(apiKey);
-  const stripePromise = loadStripe(apiKey)
+  const stripePromise = loadStripe("pk_test_51OnOCVLVDzYn9hzV24mti4SD38VrF2mhfYEEIpVSgkZQ0s0iw0iYUA5A8mpup4rQrB5ufDhdIQx3ir2IYcqxbFtf00xEP11yXY")
   const cart = useSelector(selectCart)
   const {selectedBooks} = cart 
   console.log(selectedBooks);

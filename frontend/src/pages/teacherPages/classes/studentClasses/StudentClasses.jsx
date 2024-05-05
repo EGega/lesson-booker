@@ -29,7 +29,7 @@ const StudentClasses = () => {
         </div>
         <div className={styled.completedLessons}>
           <img src={completedLessons} alt="completed Lessons" />
-          <ClickButton>Comleted Lessons <BsFillMouse2Fill /> </ClickButton>
+          <ClickButton>Completed Lessons <BsFillMouse2Fill /> </ClickButton>
         </div>
         <div className={styled.subscribe }>
           <img src={subscribe} alt="Subscribe" />
