@@ -10,6 +10,6 @@ const [login, setLogin] = useState("student")
      { login === "student" ? <StudentLogin setLogin={setLogin}/> : <TeacherLogin setLogin={setLogin}/> } 
     </>
   )
-}
+} 
 
 export default Login
