@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema ({
     lastName: {type: String, required: true},
     email: {type: String, required: true, unique: true},
     password: {type: String, required: true},
-    userType: { type: String, enum: ['teacher', 'student', 'admin'], required: true }
+    // userType: { type: String, enum: ['teacher', 'student', 'admin'], required: true }
 })
 
 userSchema.methods.generateAuthToken = function () {

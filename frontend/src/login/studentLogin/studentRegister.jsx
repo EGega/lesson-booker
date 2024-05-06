@@ -81,29 +81,33 @@ import axios from "axios"
 const StudentRegister = ({setRegister}) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const registerHandler = async (e) => {
-    // dispatch(loginActions.loginToggler())
-    // navigate('/')
-    e.preventDefault()
-    try {
-      const url = "http://localhost:8080/api/users";
-      const {data: res} = await axios.post(url, data)
-      navigate("/login")
-      console.log(res.message);
-    } catch (error) {
-      if(error.response && error.response.status >= 400 && error.response.status <= 500 ) {
-        setError(error.response.data.message)
-      }
-    }
-  }
   const [error, setError] = useState("")
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
-    userType: "student"
+    // userType: "student"
    })
+
+
+  const registerHandler = async (e) => {
+    // dispatch(loginActions.loginToggler())
+    // navigate('/')
+    console.log(data);
+    e.preventDefault()
+    try {
+      const url = "http://localhost:8080/api/users";
+      const {data: res} = await axios.post(url, data)
+      // navigate("/login")
+      console.log(res);
+    } catch (error) {
+      if(error.response && error.response.status >= 400 && error.response.status <= 500 ) {
+        setError(error.response.data.message)
+      }
+    }
+  }
+
    const handleChange = ({currentTarget: input}) => {
     setData({...data, [input.name]: input.value})
   }
@@ -160,6 +164,9 @@ const StudentRegister = ({setRegister}) => {
            required
            />
           </InputStyle>
+          
+          { // don't forget to style the error
+          error && <div >{error}</div>}
           <LoginBtn onClick={registerHandler}> Register </LoginBtn>
         </FormStyle>
         {/* Not a user */}
