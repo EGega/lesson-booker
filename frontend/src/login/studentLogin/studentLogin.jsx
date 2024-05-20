@@ -53,7 +53,7 @@
 
 // export default StudentLogin
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { FormStyle, LoginContainer, InputStyle, LoginInnerContainer, LoginBtn, NotAnUser } from '../../components/styled/LoginStyle.styled'
 import {TbUserCircle} from "react-icons/tb"
 import {RiLockPasswordFill} from "react-icons/ri"
@@ -93,6 +93,15 @@ const StudentLogin = ({setLogin}) => {
 			}
     }
   }
+
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => {
+        setError("");
+      }, 4000);
+      return () => clearTimeout(timer); 
+    }
+  }, [error]);
   return (
     <LoginContainer >
       <LoginInnerContainer>
@@ -106,7 +115,7 @@ const StudentLogin = ({setLogin}) => {
           <RiLockPasswordFill style={loginIcons}/>
           <input type="password" id='password' name='password'  placeholder='Type your password' onChange={handleChange} value={data.password} required />
           </InputStyle>
-          {error && <div className={styled.error_msg}>{error}</div>}
+          {error &&  <div className={styled.error_msg}>{error}</div>}
           <LoginBtn onClick={handleSubmit}> Login </LoginBtn>
         </FormStyle>
         {/* Not a user */}
