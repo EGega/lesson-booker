@@ -99,7 +99,7 @@ const StudentRegister = ({setRegister}) => {
     try {
       const url = "http://localhost:8080/api/users";
       const {data: res} = await axios.post(url, data)
-      // navigate("/login")
+      navigate("/login")
       console.log(res);
     } catch (error) {
       if(error.response && error.response.status >= 400 && error.response.status <= 500 ) {
