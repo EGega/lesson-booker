@@ -62,6 +62,7 @@ import { useNavigate } from 'react-router-dom'
 import { loginActions } from '../../store'
 import { useDispatch } from 'react-redux'
 import axios from "axios"
+import styled from "./styles.module.css"
 const StudentLogin = ({setLogin}) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -105,7 +106,7 @@ const StudentLogin = ({setLogin}) => {
           <RiLockPasswordFill style={loginIcons}/>
           <input type="password" id='password' name='password'  placeholder='Type your password' onChange={handleChange} value={data.password} required />
           </InputStyle>
-          {error && <div >{error}</div>}
+          {error && <div className={styled.error_msg}>{error}</div>}
           <LoginBtn onClick={handleSubmit}> Login </LoginBtn>
         </FormStyle>
         {/* Not a user */}
