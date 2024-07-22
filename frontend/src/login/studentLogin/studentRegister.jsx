@@ -73,7 +73,7 @@ import {BsFillPersonVcardFill} from "react-icons/bs"
 import {BsPersonVcard} from "react-icons/bs"
 import { loginIcons } from '../../components/styled/iconStylers'
 import { useNavigate } from 'react-router-dom'
-import { updateUserFullName } from '../../store'
+// import { updateUserFullName } from '../../store'
 import { useDispatch } from 'react-redux'
 import axios from "axios"
 
@@ -99,7 +99,7 @@ const StudentRegister = ({setRegister}) => {
     try {
       const url = "http://localhost:8080/api/users";
       const {data: res} = await axios.post(url, data)
-      dispatch(updateUserFullName({ firstName: data.firstName, lastName: data.lastName }));
+      // dispatch(updateUserFullName({ firstName: data.firstName, lastName: data.lastName }));
       navigate("/login")
       console.log(res);
     } catch (error) {

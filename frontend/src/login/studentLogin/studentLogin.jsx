@@ -66,7 +66,7 @@ import styled from "./styles.module.css"
 const StudentLogin = ({setLogin}) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const [data, setData] = useState({email: "", password: "",})
+  const [data, setData] = useState({email: "", password: ""})
   const [error, setError] = useState("")
 
   const handleChange = ({currentTarget: input}) => {
@@ -83,6 +83,7 @@ const StudentLogin = ({setLogin}) => {
       localStorage.setItem("token", res.data)
       console.log(res);
       dispatch(loginActions.loginToggler("student")) 
+      dispatch(updateUserFullName({ firstName: res.user.firstName, lastName: res.user.lastName }));
       navigate('/')
     } catch (error) {
       if (
