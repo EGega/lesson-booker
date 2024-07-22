@@ -9,7 +9,9 @@ import { useSelector } from 'react-redux'
 import NavbarModule from './navbarModule/NavbarModule'
 import Numerator from '../../shopping/numerator/Numerator'
 const Navbar = () => {
-const {logged, role} =  useSelector((state) => state.login)
+const {logged, role,} =  useSelector((state) => state.login)
+const {user} = useSelector((state) => state)
+console.log(role, logged, user);
   const [navbarModuleVisibility, setNavbarModuleVisibility] = useState(false)
   return (
     <>
@@ -22,13 +24,13 @@ const {logged, role} =  useSelector((state) => state.login)
      </div>
      <div className={styles.imgDiv}>
       <LoginBtn><Link to="/">Home</Link></LoginBtn>
-      <Link to="/profile"> {role === "student" ? "Student Enea " : "Teacher Enea" }</Link>
+      <Link to="/profile"> {role === "student" ? `${user.firstName} ${user.lastName}` : "Teacher Enea" }</Link>
       <div className={styles.imageDiv}>
        <img className={styles.avatarImage} onClick={() => {
          setNavbarModuleVisibility((prevValue) => !prevValue)
        }} src={eneaPic} alt="username will come here" />
        <Numerator/>
-      </div>
+      </div> 
      </div>
       {/* The code below is just another way to create an "effective toggler that I just came up with"  */}
       {/* { navbarModule % 2 === 0 ? <NavbarModule className={styles.navbarModule} /> : null} */}

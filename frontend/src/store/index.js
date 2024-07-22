@@ -13,6 +13,14 @@ const loginSlice = createSlice({
   }
 })
 
+const userSlice = createSlice({
+  name: "user",
+  initialState: {
+   firstName: "Anonim",
+   lastName: "Anonimi"
+  }
+})
+
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
@@ -71,7 +79,8 @@ const cartSlice = createSlice({
 const store = configureStore({
   reducer: {
     login: loginSlice.reducer,
-    cart: cartSlice.reducer
+    cart: cartSlice.reducer,
+    user: userSlice.reducer
   }
 })
 // In case that I have only one reducer so I do not need a map or reducers

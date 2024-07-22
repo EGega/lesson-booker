@@ -81,6 +81,7 @@ const StudentLogin = ({setLogin}) => {
       const {data: res} = await axios.post(url, data)
       // will have to change the localStorage
       localStorage.setItem("token", res.data)
+      console.log(res);
       dispatch(loginActions.loginToggler("student")) 
       navigate('/')
     } catch (error) {
