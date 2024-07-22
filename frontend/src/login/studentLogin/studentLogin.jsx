@@ -59,14 +59,14 @@ import {TbUserCircle} from "react-icons/tb"
 import {RiLockPasswordFill} from "react-icons/ri"
 import { loginIcons } from '../../components/styled/iconStylers'
 import { useNavigate } from 'react-router-dom'
-import { loginActions } from '../../store'
+import { loginActions, updateUserFullName } from '../../store'
 import { useDispatch } from 'react-redux'
 import axios from "axios"
 import styled from "./styles.module.css"
 const StudentLogin = ({setLogin}) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const [data, setData] = useState({email: "", password: ""})
+  const [data, setData] = useState({email: "", password: "",})
   const [error, setError] = useState("")
 
   const handleChange = ({currentTarget: input}) => {

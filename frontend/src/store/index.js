@@ -18,6 +18,12 @@ const userSlice = createSlice({
   initialState: {
    firstName: "Anonim",
    lastName: "Anonimi"
+  },
+  reducers: {
+    updateUserFullName(state, action) {
+      state.firstName = action.payload.firstName;
+      state.lastName = action.payload.lastName;
+    },
   }
 })
 
@@ -88,6 +94,7 @@ const store = configureStore({
 // Here I am exploring the actions, I do have only one actions which is the loginToggler that will work as a switch
 
 export const loginActions = loginSlice.actions
+export const { updateUserFullName } = userSlice.actions;
 export const { addBookToCart, removeBookFromCart, increaseThePrice, decreaseThePrice, removeBookIfQuantityZero } = cartSlice.actions;
 export const selectCart = (state) => state.cart
 export default store
